@@ -1,0 +1,19 @@
+/*header>img{
+    margin-left: 0px;
+    border-radius: 0px;
+}*/
+
+.sign-up{
+    background-color: rgba(254, 153, 32, 0.80);
+    padding: 7.5px;
+    padding-bottom: 50px;
+
+}
+
+#sign-up-button{
+    background: #FE9920;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
