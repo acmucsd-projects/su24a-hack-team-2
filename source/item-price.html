@@ -19,8 +19,127 @@
 
         
         <main>
-            <h1>WIREFRAME PAGE 7</h1>
             <!--CODE FOR THE PRICE COMPARISON-->
+            <style>
+                .search-container {
+                    margin: 30px;
+                    text-align: center;
+                    padding-top: 35px;
+                }
+                .search-bar {
+                    width: 1300px;
+                    padding: 10px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    border: 2px solid coral;
+                    border-radius: 5px;
+                    background-color: coral;
+                }
+                .results {
+                    margin-top: 10px;
+                    display: flex;
+                    overflow-x: auto; 
+                    border: 1px solid #ccc; 
+                    background-color: #ccc;
+                    padding: 10px; 
+                    white-space: nowrap; 
+                    height: 500px;
+                }
+                .results div {
+                    display: inline-block;
+                    text-align: center;
+                    padding: 10px;
+                    border: 1px rgb(200, 200, 200);
+                    border-radius: 30px;
+                    background-color: #ffffff;
+                    margin: 5px; 
+                    flex: 0 1 150px; 
+                    height: 365px;
+                }
+                .results a {
+                text-decoration: none; 
+                color: inherit; 
+                }
+                .results .info-link {
+                display: block; 
+                text-align: center; 
+                }
+                .results img {
+                    width: 317px;
+                    height: 275px;
+                    display: block;
+                    margin: 0 auto 10px;
+                    cursor: pointer;
+                }
+                .results span {
+                    display: block; 
+                    margin: 0px;
+                }
+                .results .info {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center; 
+                    justify-content: flex-start; 
+                    padding: 30px; 
+                    margin-top: 25px;
+                    border-radius: 15px; 
+                    background-color: rgb(255,127,80);
+                    height: 150px; 
+                    box-sizing: border-box; 
+                    font-size: 20px; 
+                    text-align: center;                  
+                }
+                .results .name {
+                    font-weight: bold;
+                    display: block; 
+                    margin-bottom: 5px; 
+                }
+            </style>
+
+            <div class="search-container">
+                <input type="text" id="searchInput"class="search-bar" placeholder="Search for Items">
+                <div id="results" class="results"></div>
+            </div>
+            <script>
+                const data = [
+                { name: "Apple", image: "./assets/images/apple-icon.png", weightOZ: "2.3 oz", weightG: "230g", url: "./make-list.html"},
+                { name: "Banana", image: "./assets/images/banana-icon.png", weightOZ: "1.3 oz", weightG: "130g", url: "./make-list.html"},
+                { name: "Strawberry", image: "./assets/images/strawberry-icon.png", weightOZ: "3.4 oz", weightG: "340g", url: "./make-list.html"},
+                { name: "Pineapple", image: "./assets/images/pineapple-icon.jpg", weightOZ: "5.6 oz ", weightG: "560g", url: "./make-list.html"},
+                { name: "Blueberry", image: "./assets/images/blueberry-icon.png", weightOZ: "0.6 oz ", weightG: "60g", url: "./make-list.html"},
+                { name: "Grape", image: "./assets/images/grape-icon.jpg", weightOZ: "4.1 oz ", weightG: "410g", url: "./make-list.html"},
+            ];
+                function filter(query){
+                    return data.filter(item => item.name.toLowerCase().includes(query.toLowerCase()))
+                }
+                function updateResults(){
+                    const query = document.getElementById('searchInput').value;
+                    const results = filter(query);
+                    const resultsDiv = document.getElementById('results');
+
+                    if (query === '') {
+                        resultsDiv.innerHTML = '';
+                        return;
+                    }
+
+                    resultsDiv.innerHTML = results.map(item => `
+                    <div>
+                        <a href="${item.url}" class="info-link">
+                            <img src="${item.image}" alt="${item.name}">
+                            <div class="info">
+                                <span class ="name">${item.name}</span>
+                                <span>${item.weightOZ}</span>
+                                <span>${item.weightG}</span>
+                            </div>
+                        </a>
+                    </div>
+                `).join('');
+                }
+
+                document.getElementById('searchInput').addEventListener('input',updateResults);
+
+            </script>
         </main>
     </body>
 
