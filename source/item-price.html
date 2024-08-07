@@ -17,10 +17,40 @@
             <a href="./user-page.html">Sign In</a>
         </header>
 
-        
         <main>
-            <!--CODE FOR THE PRICE COMPARISON-->
+            <button id="clearButton" class="clear-button">Clear</button>
             <style>
+                /* Clear Button */
+                .clear-button {
+                    padding: 10px;
+                    position: absolute; 
+                    right: 15px;    
+                    top: 114px;              
+                    font-size: 16px;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+                .suggestions {
+                    position: absolute;
+                    top: 26%;
+                    left: 5%;
+                    border: 1px solid #ccc;
+                    background-color: #fff;
+                    position: absolute;
+                    width: 1322px;
+                    max-height: 200px;
+                    overflow-y: auto;
+                    z-index: 1000;
+                    font-weight: bold;
+                }
+                .suggestions div {
+                    padding: 10px;
+                    cursor: pointer;
+                }
+                .suggestions div:hover {
+                    background-color: #eee;
+                }
+                /* Code for Search Bar */
                 .search-container {
                     margin: 30px;
                     text-align: center;
@@ -35,6 +65,15 @@
                     border-radius: 5px;
                     background-color: coral;
                 }
+                .no-results {
+                    text-align: center;
+                    font-size: 35px;
+                    color: #ff0000;
+                    margin-top: 20px;
+                    display: none;
+                    font-weight: bold;
+                }
+                /* Overall Result Box */
                 .results {
                     margin-top: 10px;
                     display: flex;
@@ -45,6 +84,7 @@
                     white-space: nowrap; 
                     height: 500px;
                 }
+                /* Individual Item Block */
                 .results div {
                     display: inline-block;
                     text-align: center;
@@ -56,14 +96,12 @@
                     flex: 0 1 150px; 
                     height: 365px;
                 }
+                /* Keeps hyperlink test coral */
                 .results a {
-                text-decoration: none; 
-                color: inherit; 
+                    text-decoration: none; 
+                    color: inherit; 
                 }
-                .results .info-link {
-                display: block; 
-                text-align: center; 
-                }
+                /* Image Size */
                 .results img {
                     width: 317px;
                     height: 275px;
@@ -71,10 +109,7 @@
                     margin: 0 auto 10px;
                     cursor: pointer;
                 }
-                .results span {
-                    display: block; 
-                    margin: 0px;
-                }
+                /* Information Block */
                 .results .info {
                     position: relative;
                     display: flex;
@@ -90,39 +125,54 @@
                     font-size: 20px; 
                     text-align: center;                  
                 }
+                /* Bolds just item name */
                 .results .name {
                     font-weight: bold;
-                    display: block; 
                     margin-bottom: 5px; 
                 }
             </style>
-
+            <!-- Search Container -->
             <div class="search-container">
                 <input type="text" id="searchInput"class="search-bar" placeholder="Search for Items">
-                <div id="results" class="results"></div>
+                <div id="suggestions" class="suggestions"></div>
+                <div id="noResults" class="no-results">No results found</div>
+                <div id="results" class="results"></div>           
             </div>
-            <script>
-                const data = [
-                { name: "Apple", image: "./assets/images/apple-icon.png", weightOZ: "2.3 oz", weightG: "230g", url: "./make-list.html"},
-                { name: "Banana", image: "./assets/images/banana-icon.png", weightOZ: "1.3 oz", weightG: "130g", url: "./make-list.html"},
-                { name: "Strawberry", image: "./assets/images/strawberry-icon.png", weightOZ: "3.4 oz", weightG: "340g", url: "./make-list.html"},
-                { name: "Pineapple", image: "./assets/images/pineapple-icon.jpg", weightOZ: "5.6 oz ", weightG: "560g", url: "./make-list.html"},
-                { name: "Blueberry", image: "./assets/images/blueberry-icon.png", weightOZ: "0.6 oz ", weightG: "60g", url: "./make-list.html"},
-                { name: "Grape", image: "./assets/images/grape-icon.jpg", weightOZ: "4.1 oz ", weightG: "410g", url: "./make-list.html"},
-            ];
-                function filter(query){
-                    return data.filter(item => item.name.toLowerCase().includes(query.toLowerCase()))
-                }
-                function updateResults(){
-                    const query = document.getElementById('searchInput').value;
-                    const results = filter(query);
-                    const resultsDiv = document.getElementById('results');
 
+            <script>
+                // Test Data
+                const data = [
+                    { name: "Apple", image: "./assets/images/apple-icon.png", weightOZ: "2.3 oz", weightG: "230g", url: "./make-list.html"},
+                    { name: "Banana", image: "./assets/images/banana-icon.png", weightOZ: "1.3 oz", weightG: "130g", url: "./make-list.html"},
+                    { name: "Strawberry", image: "./assets/images/strawberry-icon.png", weightOZ: "3.4 oz", weightG: "340g", url: "./make-list.html"},
+                    { name: "Pineapple", image: "./assets/images/pineapple-icon.jpg", weightOZ: "5.6 oz ", weightG: "560g", url: "./make-list.html"},
+                    { name: "Blueberry", image: "./assets/images/blueberry-icon.png", weightOZ: "0.6 oz ", weightG: "60g", url: "./make-list.html"},
+                    { name: "Grape", image: "./assets/images/grape-icon.jpg", weightOZ: "4.1 oz ", weightG: "410g", url: "./make-list.html"},
+                ];
+                // Searches for item and updates display
+                function updateResults(){
+                    const query = document.getElementById('searchInput').value.toLowerCase();
+                    const results = data.filter(item => item.name.toLowerCase().includes(query));
+                    const resultsDiv = document.getElementById('results');
+                    const noResultsDiv = document.getElementById('noResults');
+                    const suggestionsDiv = document.getElementById('suggestions');
+                    // Clears display when there is no input
                     if (query === '') {
                         resultsDiv.innerHTML = '';
+                        noResultsDiv.style.display = 'none';
+                        suggestionsDiv.innerHTML = '';
+                        updateAutocomplete([]);
                         return;
                     }
-
+                    // No Results Found if not found
+                    if (results.length === 0) {
+                        resultsDiv.innerHTML = '';
+                        noResultsDiv.style.display = 'block';
+                        return;
+                    }
+                    // Updates display
+                    else {
+                    noResultsDiv.style.display = 'none';
                     resultsDiv.innerHTML = results.map(item => `
                     <div>
                         <a href="${item.url}" class="info-link">
@@ -134,11 +184,42 @@
                             </div>
                         </a>
                     </div>
-                `).join('');
+                    `).join('');
+                    }
                 }
-
-                document.getElementById('searchInput').addEventListener('input',updateResults);
-
+                // Shows autocompletes suggestions
+                function autocomplete(query) {
+                    if (query === '') return [];
+                    return data.filter(item => item.name.toLowerCase().startsWith(query.toLowerCase()));
+                }
+                function showSuggestions() {
+                    const query = document.getElementById('searchInput').value.toLowerCase();
+                    const suggestions = autocomplete(query);
+                    const suggestionsDiv = document.getElementById('suggestions');
+                    if (query == ''){
+                        suggestionsDiv.innerHTML = '';
+                    }
+                    else {
+                        suggestionsDiv.innerHTML = suggestions.map(item => `<div onclick="selectSuggestion('${item.name}')">${item.name}</div>`).join('');
+                    }
+                }
+                // Updates input if autocomplete is selected
+                function selectSuggestion(name) {
+                    document.getElementById('searchInput').value = name;
+                    document.getElementById('suggestions').innerHTML = '';
+                    updateResults();
+                }
+                // Clear Button
+                document.getElementById('clearButton').addEventListener('click', () => {
+                    document.getElementById('searchInput').value = '';
+                    showSuggestions();
+                    updateResults();
+                });
+                // Updates Results
+                document.getElementById('searchInput').addEventListener('input', () => {
+                    updateResults();
+                    showSuggestions();
+                });
             </script>
         </main>
     </body>
