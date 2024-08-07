@@ -8,11 +8,14 @@
 **Wednesday, August 7, 2024 @ 6:00pm - 7:00pm**
 - Discuss what progress has been done during the week.
   - HTML/CSS + MongoDB primarily
+- Check with Pansy:
+    - MVP during week 5?
+    - React components
+    - What exactly is within the starter code?
 
 ## Topics
 - Wrap Up Week 3
 - Plans for Week 4
-- Action Items for the next meeting on  **Wednesday, August 7, 2024**
 
 ### Wrap Up Week 3
 - Discussed what each member has been working on:
@@ -32,9 +35,4 @@
     - Look into implementing them.
 
 
-### Action Items
-- Check with Pansy:
-    - MVP during week 5?
-    - React components
-    - What exactly is within the starter code?
 
