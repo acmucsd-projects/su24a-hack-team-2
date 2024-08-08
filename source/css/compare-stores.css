@@ -1,0 +1,12 @@
+.title-child{
+    display: inline-block;
+    
+}
+.title-child-right{
+    float: right;
+}
+
+.stores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
