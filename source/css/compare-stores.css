@@ -1,12 +1,92 @@
-.title-child{
+/* .title-child{
     display: inline-block;
     
+} */
+
+.title {
+    display: flex;
+    justify-content: space-between; /* Aligns text left and buttons right */
+    align-items: center; /* Aligns text and buttons vertically at the same level */
+    padding: 10px; /* Optional: Adds padding around the title */
 }
-.title-child-right{
-    float: right;
+
+.list-name {
+    margin: 0; /* Removes default margin to align properly */
 }
+
+.title-child-right {
+    display: flex;
+    gap: 10px; /* Adds space between the buttons */
+}
+
+
+/* .title{
+    display: flex;
+    justify-content: flex-end; /* Aligns the buttons to the right */
+    /* gap: 10px; Adds space between the buttons */
+
+/* } */
+
 
 .stores-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
   }
+
+.menuBTN {
+    background-color: #7c9e57; /* Green */
+    border: none;
+    padding: 7px 28px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    /* float: right; */
+}
+
+.store {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.store img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.store-title {
+    background-color: #2e2d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.store-title:hover {
+    background-color: #0056b3;
+}
+
+.store-dropdown {
+    margin-top: 10px;
+}
+
+.store-select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
