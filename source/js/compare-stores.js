@@ -84,23 +84,17 @@ document.querySelectorAll('.store-select').forEach(select => {
 
 
 document.getElementById('gridContainer').addEventListener('click', function(e) {
-    
+    if (e.target.classList.contains('delete-store-btn')) {
+        const store = e.target.closest('.store');
+        const gridContainer = document.getElementById('gridContainer');
+        let columnCount = getComputedStyle(gridContainer).gridTemplateColumns.split(' ').length;
 
-    const gridContainer = document.getElementById('gridContainer');
-    let columnCount = getComputedStyle(gridContainer).gridTemplateColumns.split(' ').length;
-
-    if (columnCount > 1) { // Ensure there's at least 1 column
-        if (e.target.classList.contains('delete-store-btn')) {
-            const store = e.target.closest('.store');
+        if (columnCount > 1) { // Ensure there's at least 1 column left after deletion
             store.remove();
+            gridContainer.style.gridTemplateColumns = `repeat(${columnCount - 1}, 1fr)`;
+        } else {
+            alert('You must have at least one store!');
         }
-        gridContainer.style.gridTemplateColumns = `repeat(${columnCount - 1}, 1fr)`;
-
-        // // Remove the last item in the grid
-        // if (gridContainer.children.length > 0) {
-        //     gridContainer.removeChild(gridContainer.lastChild);
-        // }
-    } else {
-        alert('You must have at least one store!');
     }
 });
+
