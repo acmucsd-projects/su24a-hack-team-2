@@ -1,0 +1,150 @@
+
+#grocery-header{
+    background: #FC9E5F;    
+    border-radius: 10px;
+
+    padding: 9px;
+
+    color:rgb(128, 57, 9);
+
+    margin: 10px;
+}
+::placeholder{
+    color:rgb(128, 57, 9);
+    font-size: 110%;
+    font-weight: bold;
+}
+
+#next-page-buttons{
+    background: #7C9E57;
+    border-radius: 10px;
+    
+    padding:10px;
+    margin:10px;
+
+    font-size: 110%;
+    font-weight: bold;
+
+    justify-content: left;
+
+}
+
+.information-holder{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    background-color: rgb(225, 228, 207);
+
+    border-radius: 10px;
+
+    margin: 10px;
+}
+
+.column1, .column2, .column3{
+    border-style: solid;
+    border-color: rgb(252, 255, 232);
+    border-radius: 10px;
+}
+
+.column1{
+    #item-list{
+        font-weight: bold;
+        font-size: 125%
+    }    
+}
+
+
+
+.column2{
+    .align-images-center{
+        display: grid;
+        justify-content: center;
+        padding-bottom: 10px;
+
+        img{
+            border-radius: 10px;
+        }
+    }
+
+    h2{
+        margin: 10px;
+        font-size: 150%;
+    }
+
+    .image-holder{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    
+        button{
+            border-radius: 10px;
+            width:35px;
+            background-color: rgb(12,71,103, 0.60);
+
+            font-size: 250%;
+
+            &:hover{
+                cursor: pointer;
+                opacity: 80%;
+            }
+
+        }
+
+        img{
+            border-radius: 10px;
+            margin: 10px;
+        }
+    
+    }
+
+}
+
+.column3{
+    .fact-buttons{
+        display: flex;
+        justify-content: center;
+        margin:10px;
+
+        button{
+            border-style: none;
+
+            font-size: 130%;
+
+            background-color: rgb(206, 208, 192);
+
+            font-weight: bold;
+
+            padding: 10px;
+
+            &:hover{
+                cursor: pointer;
+                opacity: 80%;
+                
+            }
+
+            &:active{
+                background-color: rgb(173, 175, 161);
+            }
+        }
+
+        #description-button{
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        #nutrition-button{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+
+    }
+
+    #nutrition-facts{
+        margin: 10px;
+
+        font-size: 110%;
+    }
+
+}
+

@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/make-list.css">
         <title>Go Go Grocery!</title>
     </head>
 
@@ -12,15 +13,64 @@
         <header>
             <img src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E">
             <h1>Go Go Grocery</h1>
-            <a>Search</a>
-            <a href="./make-list.html">Shopping List</a>
-            <a href="./user-page.html">Sign In</a>
+            <div class="header-links">
+                <div class="icon+link">
+                    <img src="./assets/images/search-icon-black.png" width="20" height="20">
+                    <a href="./user-page.html">Search Items</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/cart3.png" width="20" height="20">
+                    <a href="./make-list.html">Shopping List</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/person-icon.png" width="20" height="20">
+                    <a href="./user-page.html">Sign In</a>
+                </div>
+            </div>
         </header>
 
-            <h1>WIREFRAME PAGE 6</h1>
+            <!-- <h1>WIREFRAME PAGE 6</h1> -->
             <!--CODE FOR THE PRODUCT LIST - item | item image | description/nutrition fact-->
-            <a href="./item-price.html">Add Item</a>
-            <a href="./compare-stores.html">Finished with your list?</a>
+            <button id="next-page-buttons">Add Item</button> <!--href="./item-price.html"-->
+            <div>
+                <textarea rows="1" cols="170" id="grocery-header" placeholder="Enter List Name"></textarea>
+
+                <div class="information-holder">
+                    <div class="column1">
+                        <list id="item-list">
+                            <ul>hello</ul>
+                        </list>
+                    </div>
+                    
+                    <div class="column2">
+                        <h2 id="item-name">Name</h2>
+                        <div class="align-images-center">
+                            <p id="main-image">Main Image Holder</p>
+                            <img id="main-image" src="./assets/images/traderjoes-icon.png" width="100">
+                            <p id="extra-images">Extra Image Holder</p>
+                        </div>
+                        <div class="image-holder">
+                            <button id="back-image-button">&larr;</button>
+                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
+                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
+                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
+                            <button id="next-image-button">&rarr;</button>
+                        </div>
+                    </div>
+                    
+                    <div class="column3">
+                        <div class="item-description">
+                            <div class="fact-buttons">
+                                <button id="description-button">Description</button>
+                                <button id="nutrition-button">Nutrition Facts</button>
+                            </div>
+                            <p id="nutrition-facts">Nutritional Facts</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <button id="next-page-buttons">Finished with your list?</button> <!--href="./compare-stores.html"-->
         </main>
     </body>
 
