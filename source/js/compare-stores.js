@@ -14,6 +14,7 @@ document.getElementById('addStoreBtn').addEventListener('click', function() {
         const newItem = document.createElement('div');
         newItem.className = 'store';
         newItem.innerHTML = `
+                        <button class="delete-store-btn">&times;</button>
                         <img src="./assets/images/walmart-icon.png" alt="Walmart Logo" class="store-image">
                         <button class="store-title">Walmart</button>
                         <div class="store-dropdown">
@@ -82,3 +83,24 @@ document.querySelectorAll('.store-select').forEach(select => {
 });
 
 
+document.getElementById('gridContainer').addEventListener('click', function(e) {
+    
+
+    const gridContainer = document.getElementById('gridContainer');
+    let columnCount = getComputedStyle(gridContainer).gridTemplateColumns.split(' ').length;
+
+    if (columnCount > 1) { // Ensure there's at least 1 column
+        if (e.target.classList.contains('delete-store-btn')) {
+            const store = e.target.closest('.store');
+            store.remove();
+        }
+        gridContainer.style.gridTemplateColumns = `repeat(${columnCount - 1}, 1fr)`;
+
+        // // Remove the last item in the grid
+        // if (gridContainer.children.length > 0) {
+        //     gridContainer.removeChild(gridContainer.lastChild);
+        // }
+    } else {
+        alert('You must have at least one store!');
+    }
+});
