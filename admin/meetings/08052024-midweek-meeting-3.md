@@ -1,4 +1,4 @@
-# [Team Name]: Midweek Meeting 3 <br> 08/05/2024 10:00am - 11:00am
+# NightMonkey Coders: Midweek Meeting 3 <br> 08/05/2024 10:00am - 11:00am
 
 ## Members Present
 - Vinod
