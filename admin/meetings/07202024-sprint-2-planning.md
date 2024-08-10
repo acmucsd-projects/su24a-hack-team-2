@@ -1,4 +1,4 @@
-# [Team Name]: Sprint 2 Planning <br> 07/20/2024 10:00am - 11:00am
+# NightMonkey Coders: Sprint 2 Planning <br> 07/20/2024 10:00am - 11:00am
 
 ## Members Present
 - Vinod
