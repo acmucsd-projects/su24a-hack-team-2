@@ -1,4 +1,4 @@
-# [Team Name]: Midweek Meeting 2 <br> 07/24/2024 6:00pm - 6:30pm
+# NightMonkey Coders: Midweek Meeting 2 <br> 07/24/2024 6:00pm - 6:30pm
 
 ## Members Present
 - Vinod
