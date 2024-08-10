@@ -6,12 +6,13 @@
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/make-list.css">
+        <script src="./js/make-list.js" type="module"></script>
         <title>Go Go Grocery!</title>
     </head>
 
     <body>
         <header>
-            <img src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E">
+            <img id="home-button-logo" src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E" onclick="location.href='./index.html';">
             <h1>Go Go Grocery</h1>
             <div class="header-links">
                 <div class="icon+link">
@@ -29,48 +30,56 @@
             </div>
         </header>
 
-            <!-- <h1>WIREFRAME PAGE 6</h1> -->
-            <!--CODE FOR THE PRODUCT LIST - item | item image | description/nutrition fact-->
-            <button id="next-page-buttons">Add Item</button> <!--href="./item-price.html"-->
+            <!--CODE FOR THE PRODUCT LIST (wireframe page 6) - item | item image | description/nutrition fact-->
+
+            <!--Add Item Button - on click, sends to item-price.html page-->
+            <button class="next-page-buttons" id="add-item-button" onclick="location.href = './item-price.html';">Add Item</button> 
+
+
             <div>
                 <textarea rows="1" cols="170" id="grocery-header" placeholder="Enter List Name"></textarea>
 
-                <div class="information-holder">
+                <div class="information-holder"> <!--3 Column Display-->
+                    <!--Column 1: Holds Actual List of Items-->
                     <div class="column1">
                         <list id="item-list">
                             <ul>hello</ul>
                         </list>
                     </div>
                     
+                    <!--Individual Item Display-->
                     <div class="column2">
                         <h2 id="item-name">Name</h2>
                         <div class="align-images-center">
-                            <p id="main-image">Main Image Holder</p>
                             <img id="main-image" src="./assets/images/traderjoes-icon.png" width="100">
-                            <p id="extra-images">Extra Image Holder</p>
                         </div>
+
+                        <!--Holds Extra Images of Item Selected-->
                         <div class="image-holder">
-                            <button id="back-image-button">&larr;</button>
                             <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
                             <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
                             <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
-                            <button id="next-image-button">&rarr;</button>
+                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
+                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
+                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
                         </div>
                     </div>
                     
                     <div class="column3">
+                        <!--Item Description/Nutrition Facts Buttons-->
                         <div class="item-description">
                             <div class="fact-buttons">
                                 <button id="description-button">Description</button>
                                 <button id="nutrition-button">Nutrition Facts</button>
                             </div>
-                            <p id="nutrition-facts">Nutritional Facts</p>
+                            <p id="displayed-text">Description Text</p>
                         </div>
                     </div>
 
                 </div>
             </div>
-            <button id="next-page-buttons">Finished with your list?</button> <!--href="./compare-stores.html"-->
+            <!--Finished List Button: on click, sends to compare-stores.html-->
+            <button class="next-page-buttons" id="finished-list-button" onclick="location.href= './compare-stores.html';">Finished with your list?</button>
         </main>
     </body>
 

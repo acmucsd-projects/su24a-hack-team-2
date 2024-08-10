@@ -1,4 +1,5 @@
 
+/*Formatting for the text area*/
 #grocery-header{
     background: #FC9E5F;    
     border-radius: 10px;
@@ -9,13 +10,16 @@
 
     margin: 10px;
 }
+
+/*Changing the color of the text inside the text area*/
 ::placeholder{
     color:rgb(128, 57, 9);
     font-size: 110%;
     font-weight: bold;
 }
 
-#next-page-buttons{
+/*Formatting of the 'Add Item' and 'Finished with your list' buttons*/
+.next-page-buttons{
     background: #7C9E57;
     border-radius: 10px;
     
@@ -26,9 +30,15 @@
     font-weight: bold;
 
     justify-content: left;
-
 }
 
+/*Changing cursor visuals + opacity of 'add item' and 'finished with your list' buttons */
+.next-page-buttons:hover{
+    cursor:pointer;
+    opacity: 80%;
+}
+
+/*formatting for the entirety of the 3-column display*/
 .information-holder{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -40,12 +50,14 @@
     margin: 10px;
 }
 
+/*Including border between each column to determine placement - can take out if wanted*/
 .column1, .column2, .column3{
     border-style: solid;
-    border-color: rgb(252, 255, 232);
+    border-color: rgb(213, 215, 200);
     border-radius: 10px;
 }
 
+/*Adjusting font weight/size of the list of items within 1st column*/
 .column1{
     #item-list{
         font-weight: bold;
@@ -53,9 +65,10 @@
     }    
 }
 
-
-
+/*Overall formatting for 2nd column*/
 .column2{
+
+    /*Aligning the Name and Main Image to be in the center of the column*/
     .align-images-center{
         display: grid;
         justify-content: center;
@@ -63,6 +76,11 @@
 
         img{
             border-radius: 10px;
+
+            width:50%;
+            height:auto;
+
+            justify-self: center;
         }
     }
 
@@ -71,35 +89,12 @@
         font-size: 150%;
     }
 
-    .image-holder{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    
-        button{
-            border-radius: 10px;
-            width:35px;
-            background-color: rgb(12,71,103, 0.60);
-
-            font-size: 250%;
-
-            &:hover{
-                cursor: pointer;
-                opacity: 80%;
-            }
-
-        }
-
-        img{
-            border-radius: 10px;
-            margin: 10px;
-        }
-    
-    }
-
 }
 
+/*Formatting for the 3rd Column*/
 .column3{
+
+    /*Adjusting display of 'description' and 'nutrition facts' buttons*/
     .fact-buttons{
         display: flex;
         justify-content: center;
@@ -115,21 +110,14 @@
             font-weight: bold;
 
             padding: 10px;
-
-            &:hover{
-                cursor: pointer;
-                opacity: 80%;
-                
-            }
-
-            &:active{
-                background-color: rgb(173, 175, 161);
-            }
+            
         }
 
         #description-button{
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
+
+            background-color: rgb(173, 175, 161); /*keep this way so that when page loads, it looks like description button is automatically selected.*/
         }
 
         #nutrition-button{
@@ -137,14 +125,74 @@
             border-bottom-right-radius: 20px;
         }
 
+        button:hover{
+            cursor: pointer;
+            opacity: 80%;
+        }
+
 
     }
 
-    #nutrition-facts{
+    #displayed-text{
         margin: 10px;
 
         font-size: 110%;
     }
 
+}
+
+/*Formatting for the image slider in 2nd column*/
+.image-holder{
+    display: flex;
+    
+    overflow:scroll;
+    width:auto;
+    height:auto;
+    border:1px solid rgb(241, 243, 227);
+    margin:10px;
+    background-color: rgb(241, 243, 227);
+
+    border-radius: 10px;
+    
+    scroll-snap-type: x mandatory;
+
+    /*Makes sure all images inside slider have rounded border + equal space between each item*/
+    img{
+        border-radius: 10px;
+        margin: 10px;
+    }
+}
+
+/*Formatting for permanent scroller (1/4)*/
+.image-holder::-webkit-scrollbar{
+    width:10px;
+    scrollbar-width: thin;
+}
+
+/*Formatting for permanent scroller (2/4)*/
+.image-holder::-webkit-scrollbar-track{
+    background-color:#f1f1f1;
+}
+
+/*Formatting for permanent scroller (3/4)*/
+.image-holder::-webkit-scrollbar-thumb{
+    background-color: #bec7b6;
+}
+
+/*Formatting for permanent scroller (4/4)*/
+.image-holder::-webkit-scrollbar-thumb:hover{
+    background-color: #3f7c4a;
+}
+
+/*Making sure the images disappear once they "overflow"/are scrolled past + format of the actual image sizes*/
+.image-holder > img{
+    display: flex;
+
+    flex-shrink: 0;
+    width:20%;
+    height:auto;
+
+    scroll-snap-align:auto;
+    scroll-behavior:auto;
 }
 

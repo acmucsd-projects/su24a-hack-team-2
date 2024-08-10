@@ -54,20 +54,9 @@ header {
         padding-left: 100px;
     }
 
-    /* This handles the class of "back" buttons in the headers. Home button on project.html and back button on notes.html */
-    .back {
-        &>i {
-            font-size: 2em;
-            font-weight: 700;
-            letter-spacing: 5px;
-            margin: 3px;
-            margin-left: 8px;
-            color: white;
-        }
-
-        &:hover {
-            opacity: 60%;
-        }
+    #home-button-logo:hover{
+            cursor:pointer;
+            opacity: 80%;
     }
 }
 
