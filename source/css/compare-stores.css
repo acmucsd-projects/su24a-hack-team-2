@@ -35,6 +35,15 @@
     padding: 10px;
   }
 
+#editListBtn {
+    background-color: transparent; /* Dark Blue */
+    border: none;
+    font-size: large;
+    
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .menuBTN {
     background-color: #7c9e57; /* Green */
     border: none;
@@ -45,22 +54,27 @@
     font-size: 24px;
     border-radius: 12px;
     font-weight: bold;
+    cursor: pointer;
     /* float: right; */
 }
 
-/* .store {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 10px;
+.menuBTN:hover {
+    background-color: #4f6834; /* Darker Green */
+}
+
+.store {
+    background-color: transparent;
+    /* padding: 15px; */
+    /* border-radius: 10px; */
     text-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     
-} */
+}
 
-.store {
+.storeTitleBar {
     background-color: #f8f9fa;
     padding: 15px;
     border-radius: 10px;
@@ -69,10 +83,11 @@
     display: flex;
     flex-direction: row; /* Change to row to align items horizontally */
     align-items: center; /* Center items vertically */
+    
     justify-content: space-between; /* Optional: Space elements evenly */
 }
 
-.store img {
+.storeTitleBar img {
     width: 50px;
     height: 50px;
     /* margin-bottom: 10px; */
@@ -92,7 +107,7 @@
 }
 
 .store-title:hover {
-    background-color: #0056b3;
+    background-color: #4e4c82;
 }
 
 .store-dropdown {
@@ -124,3 +139,51 @@
 .delete-store-btn:hover {
     background-color: darkred;
 }
+
+
+.storeItems {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    max-height:315px;
+    min-height:315px;
+    overflow-y:scroll;
+    
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    font-weight: bold;
+    font-size:larger;
+}
+
+.item-price {
+    color: #2f2f2f;
+}
+
+.subtotal, .total {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #272d32;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.subtotal-price, .total-price {
+    color: #ffffff;
+}
+
