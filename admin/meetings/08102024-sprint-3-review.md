@@ -1,4 +1,4 @@
-# [NightMonkey Coders]: Sprint 3 Review <br> 08/10/2024 10:00am - 11:00am
+# NightMonkey Coders: Sprint 3 Review <br> 08/10/2024 10:00am - 11:00am
 
 ## Members Present
 - Vinod
