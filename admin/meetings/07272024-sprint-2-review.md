@@ -1,4 +1,4 @@
-# [Team Name]: Sprint 2 Review <br> 07/27/2024 10:00am - 11:00am
+# NightMonkey Coders: Sprint 2 Review <br> 07/27/2024 10:00am - 11:00am
 
 ## Members Present
 - Gowtham
