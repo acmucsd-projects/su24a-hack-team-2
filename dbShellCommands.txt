@@ -1,0 +1,10 @@
+mongosh "mongodb+srv://gogogrocery.yameky9.mongodb.net/" --apiVersion 1 --username goGoGrocery
+show dbs
+use [dbName]
+show tables
+use [collectionName]
+
+AFTER CONNECTING TO THE DATABASE:
+db.login.insertOne({email:"ex@exe.com",password:"sup3rs3cure",name:"ex exe"})
+
+command cheat sheet: https://gist.github.com/michaeltreat/d3bdc989b54cff969df86484e091fd0c

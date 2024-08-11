@@ -1,4 +1,4 @@
-# [Team Name]: Sprint 2 Planning <br> 07/20/2024 10:00am - 11:00am
+# NightMonkey Coders: Sprint 2 Planning <br> 07/20/2024 10:00am - 11:00am
 
 ## Members Present
 - Vinod
@@ -48,6 +48,8 @@ Nutrition Facts Link: [https://world.openfoodfacts.org/](https://world.openfoodf
 Product Information: [https://www.ers.usda.gov/data-products/quarterly-food-at-home-price-database/
 ](https://www.ers.usda.gov/data-products/quarterly-food-at-home-price-database/
 )
+
+Big list with a lot of apis lol: [https://github.com/public-apis/public-apis#food--drink](https://github.com/public-apis/public-apis#food--drink)
 
 - Worst case: would have crawlers scraping the internet for data from each store.
 

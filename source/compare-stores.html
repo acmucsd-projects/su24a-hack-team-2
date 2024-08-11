@@ -5,20 +5,265 @@
         <meta charset="UTF-8">
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/compare-stores.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="./js/compare-stores.js" defer></script>
         <title>Go Go Grocery!</title>
     </head>
 
     <body>
-        <header>
-            <img src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E">
+         <header>
+            <img id="home-button-logo" src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E" onclick="location.href='./index.html';">
             <h1>Go Go Grocery</h1>
-            <a>Search</a>
-            <a href="./make-list.html">Shopping List</a>
-            <a href="./user-page.html">Sign In</a>
-        </header>
+            <div class="header-links">
+                <div class="icon+link">
+                    <img src="./assets/images/search-icon-black.png" width="20" height="20">
+                    <a href="./user-page.html">Search Items</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/cart3.png" width="20" height="20">
+                    <a href="./make-list.html">Shopping List</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/person-icon.png" width="20" height="20">
+                    <a href="./user-page.html">Sign In</a>
+                </div>
+            </div>
+        </header> 
 
         <main>
-            <h1>WIREFRAME PAGE 2</h1>
+            <div class='title'>
+                <div class='list-name'><h1>
+                    <span id="listHeading">John's Monday Grocery Run</span>
+                    <button id="editListBtn"><i class="fas fa-pencil-alt"></i></button>
+                </h1> 
+                
+            
+                </div>
+                <div class="title-child-right">
+                    <button class="menuBTN" id="addItemBtn">Add Item</button>
+                    <!-- <div class='divider'>hs</div> -->
+                    <button class="menuBTN" id="addStoreBtn">Add Store</button>
+
+                </div>
+                
+            </div>
+
+            <div class='stores-grid' id="gridContainer">
+                <div class='store'>
+                    <div class='storeTitleBar' style="background-color: #945d5e;">
+                        <button class="delete-store-btn">&times;</button>
+                        <img src="./assets/images/walmart-icon.png" alt="Walmart Logo" class="store-image">
+                        <button class="store-title">Walmart</button>
+                        <div class="store-dropdown">
+                            <!-- <label for="store-select">Change Store:</label> -->
+                            <select id="store-select" class="store-select">
+                                <option value="walmart">Walmart</option>
+                                <option value="ralphs">Ralphs</option>
+                                <option value="costco">Costco</option>
+                                <option value="target">Target</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class='storeItems'>
+                        <div class='item'>
+                            <span class='item-name'>Grapes</span>
+                            <span class='item-price'>$4.70</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Oreo</span>
+                            <span class='item-price'>$5.98</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Chicken Breast</span>
+                            <span class='item-price'>$12.19</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Penne Pasta</span>
+                            <span class='item-price'>$1.18</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>1 Tomato</span>
+                            <span class='item-price'>$0.27</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Bacon</span>
+                            <span class='item-price'>$3.44</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Eggs</span>
+                            <span class='item-price'>$3.28</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Milk</span>
+                            <span class='item-price'>$3.78</span>
+                        </div>
+                    </div>
+
+                    <div class='subtotal'>
+                        <span style="color:white">Subtotal:</span>
+                        <span class='subtotal-price'>$8.47</span>
+                    </div>
+
+                    <div class='total'>
+                        <span style="color:white">Total:</span>
+                        <span class='total-price'>$8.47</span>
+                    </div>
+
+                </div>
+                <div class='store'>
+                    <div class='storeTitleBar' style="background-color: #337357;">
+                        <button class="delete-store-btn">&times;</button>
+                        <img src="./assets/images/ralphs-icon.png" alt="Ralphs Logo" class="store-image">
+                        <button class="store-title">Ralphs</button>
+                        <div class="store-dropdown">
+                            <!-- <label for="store-select">Change Store:</label> -->
+                            <select id="store-select" class="store-select">
+                                <option value="walmart">Walmart</option>
+                                <option value="ralphs" selected>Ralphs</option>
+                                <option value="costco">Costco</option>
+                                <option value="target">Target</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class='storeItems'>
+                        <div class='item'>
+                            <span class='item-name'>Grapes</span>
+                            <span class='item-price'>$4.70</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Oreo</span>
+                            <span class='item-price'>$5.98</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Chicken Breast</span>
+                            <span class='item-price'>$12.19</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Penne Pasta</span>
+                            <span class='item-price'>$1.18</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>1 Tomato</span>
+                            <span class='item-price'>$0.27</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Bacon</span>
+                            <span class='item-price'>$3.44</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Eggs</span>
+                            <span class='item-price'>$3.28</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Milk</span>
+                            <span class='item-price'>$3.78</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Bananas</span>
+                            <span class='item-price'>$1.29</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Orange Juice</span>
+                            <span class='item-price'>$4.99</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Cereal</span>
+                            <span class='item-price'>$3.79</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Cheese</span>
+                            <span class='item-price'>$2.50</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Apples</span>
+                            <span class='item-price'>$3.20</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Yogurt</span>
+                            <span class='item-price'>$1.99</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Chocolate Bar</span>
+                            <span class='item-price'>$1.50</span>
+                        </div>
+
+
+                    </div>
+
+                    <div class='subtotal'>
+                        <span style="color:white">Subtotal:</span>
+                        <span class='subtotal-price'>$8.47</span>
+                    </div>
+
+                    <div class='total'>
+                        <span style="color:white">Total:</span>
+                        <span class='total-price'>$8.47</span>
+                    </div>
+                </div>
+                <div class='store'>
+                    <div class='storeTitleBar' style="background-color: #71677c;">
+                        <button class="delete-store-btn">&times;</button>
+                        <img src="./assets/images/costco-icon.png" alt="Costco Logo" class="store-image">
+                        <button class="store-title">Costco</button>
+                        <div class="store-dropdown">
+                            <!-- <label for="store-select">Change Store:</label> -->
+                            <select id="store-select" class="store-select">
+                                <option value="walmart">Walmart</option>
+                                <option value="ralphs">Ralphs</option>
+                                <option value="costco" selected>Costco</option>
+                                <option value="target">Target</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class='storeItems'>
+                        <div class='item'>
+                            <span class='item-name'>Grapes</span>
+                            <span class='item-price'>$4.70</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Oreo</span>
+                            <span class='item-price'>$5.98</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>1 Tomato</span>
+                            <span class='item-price'>$0.27</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Bacon</span>
+                            <span class='item-price'>$3.44</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Eggs</span>
+                            <span class='item-price'>$3.28</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Milk</span>
+                            <span class='item-price'>$3.78</span>
+                        </div>
+                        <div class='item'>
+                            <span class='item-name'>Kinder Joy</span>
+                            <span class='item-price'>$1.49</span>
+                        </div>
+                    </div>
+
+                    <div class='subtotal'>
+                        <span style="color:white">Subtotal:</span>
+                        <span class='subtotal-price'>$8.47</span>
+                    </div>
+
+                    <div class='total'>
+                        <span style="color:white">Total:</span>
+                        <span class='total-price'>$8.47</span>
+                    </div>
+                </div>
+            </div>
+
+
             <!--CODE COMPARING STORES-->
         </main>
     </body>

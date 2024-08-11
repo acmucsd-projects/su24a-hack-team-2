@@ -1,4 +1,4 @@
-# [Team Name]: Wireframe meeting <br> 7/17/2024 6:00pm - 7:00pm
+# NightMonkey Coders: Wireframe meeting <br> 7/17/2024 6:00pm - 7:00pm
 ## Members Present
 - Vinod
 - Gowtham

@@ -1,4 +1,4 @@
-# [Team Name]: Kickoff meeting <br> 7/13/2024 10:00am - 11:00am
+# NightMonkey Coders: Kickoff meeting <br> 7/13/2024 10:00am - 11:00am
 ## Members Present
 - Vinod
 - Jonathan
