@@ -18,9 +18,9 @@
 
     <body>
         <header>
-            <img src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E">
+            <img id="home-button-logo" src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E" onclick="location.href='./index.html';">
             <h1>Go Go Grocery</h1>
-            <div class="links">
+            <div class="header-links">
                 <div class="icon+link">
                     <img src="./assets/images/search-icon-black.png" width="20" height="20">
                     <a href="./user-page.html">Search Items</a>
@@ -179,10 +179,13 @@
                 #my-signin2 {
                     position: absolute;                    
                     top: 193px; /* Move further down */
-                    right: 200px; /* Move further to the right */
-                    width: 450px;  /* Set desired width */
+                    right: -50px; /* Move further to the right */
+                    width: 650px;  /* Set desired width */
                     height: 50px;  /* Set desired height */
+                    padding: 0px 20px 3px 150px;
                     transform: scale(1.4);
+                    width: 1350px;
+                    right: -873px;
                 }
                 /* Apple Sign-in 
                 NEEDS WORK */
@@ -200,11 +203,11 @@
                 #msal-login-button {
                     position: absolute;
                     top: 348px;
-                    right: 360px;
+                    right: 353px;
                     background-color: #0078d4; /* Microsoft blue */
                     color: white;
                     border: none;
-                    padding: 10px 20px;
+                    padding: 10px 39px;
                     border-radius: 5px;
                     font-size: 16px;
                     cursor: pointer;
@@ -217,10 +220,10 @@
                 NEEDS WORK */
                 .email-login {
                     position: absolute;
-                    top: 410px;
-                    left: 340px;
-                    height: 50px;
-                    width: 400px;
+                    top: 408px;
+                    left: 280px;
+                    height: 60px;
+                    width: 483px;
                     padding: 5px 20px 5px 20px;
                     background-color: #FE9920; /* Semi-transparent white background */
                     color: black;
@@ -234,10 +237,24 @@
                     height: 100%;
                     width: 100%;
                 }
-
                 .email-login:hover {
                     opacity: 0.8; /* Optional: Add a hover effect */
                     cursor: pointer; /* Change cursor to pointer to indicate clickable */
+                    background-color: #005a9e;
+                }
+                .email-auth-box {
+                    display: none; /* Hidden by default */
+                    position: fixed;
+                    top: 150px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 300px;
+                    padding: 20px;
+                    background-color: #ebf1e5;
+                    color: black;
+                    border-radius: 10px;
+                    z-index: 1000;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
                 }
             </style>
             <section class="sign-up">
@@ -290,16 +307,43 @@
             <div id="my-signin2"></div>
             <div id="appleid-signin" data-color="black" data-border="true" data-type="sign in"></div>
             <button id="msal-login-button">Sign in with Microsoft</button>
-            <a href="NEEDS TO BE CREATED" class="email-login"></a>
-                <div class="email-login">
-                    <p>Login with Email</p>
-                </div>
-            </a>
+            <div class="email-login" id ="email-login">
+                <p>Login with Email</p>
+            </div>
+            <div class="email-auth-box" id="email-auth-box">
+                <form id="email-auth-form">
+                    <h2>Email Authentication</h2>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br><br>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
 
 
         </div>
     </body>
     <script>
+        document.getElementById('email-login').addEventListener('click', () => {
+            document.getElementById('email-auth-box').style.display = 'block';
+        });
+
+        document.getElementById('email-auth-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+
+            console.log(`Email: ${email}, Name: ${name}`);
+
+            alert("Authentication successful!");
+
+            document.getElementById('email-auth-box').style.display = 'none';
+            window.location.href = 'user-page.html';
+        });
         // Google Sign-in
         function onSuccess(googleUser) {
         console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
@@ -319,6 +363,7 @@
         });
         }
     </script>
+    
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
     <script src="https://alcdn.msauth.net/lib/1.10.0/js/msal-browser.min.js"></script>
