@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <meta name="google-signin-client_id" content="79858330616-nf0o1rqknhqa2ieqilhn8ga86uk79fce.apps.googleusercontent.com">
+        <meta name="appleid-signin-client-id" content="[CLIENT_ID]">
+        <meta name="appleid-signin-scope" content="[SCOPES]">
+        <meta name="appleid-signin-redirect-uri" content="[REDIRECT_URI]">
+        <meta name="appleid-signin-state" content="[STATE]">
+        <meta name="appleid-signin-nonce" content="[NONCE]">
+        <meta name="appleid-signin-use-popup" content="true">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <title>Go Go Grocery!</title>
+    </head>
+
+    <body>
+        <header>
+            <img src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E">
+            <h1>Go Go Grocery</h1>
+            <div class="links">
+                <div class="icon+link">
+                    <img src="./assets/images/search-icon-black.png" width="20" height="20">
+                    <a href="./user-page.html">Search Items</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/cart3.png" width="20" height="20">
+                    <a href="./make-list.html">Shopping List</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/person-icon.png" width="20" height="20">
+                    <a href="./user-page.html">Sign In</a>
+                </div>
+            </div>
+        </header>
+
+        <br>
+        <br>
+        <main class="info">
+            <style>
+                body {
+                    position: relative;
+                }
+                /* Grayish Box */
+                .overlay-box {
+                    position: fixed; /* or absolute, depending on your needs */
+                    top: 100px; /* Adjust as needed */
+                    right: 200px; /* Adjust as needed */
+                    width: 1000px; /* Adjust as needed */
+                    height: 500px;
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 25px;
+                    font-weight: bold;
+                    background-color: #ebf1e5; /* Semi-transparent background */
+                    color: white;
+                    border-radius: 10px;
+                    z-index: 1000; /* Higher than other elements */
+                }
+                /* Red Line */
+                .vertical-line {
+                    position: absolute;
+                    top: 140px;
+                    right: 875px;
+                    width: 2px; /* Line thickness */
+                    height: 70%; /* Full height of the container */
+                    background-color: #AA4A4A; /* Line color */
+                    margin: 0 20px; /* Spacing around the line */
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line1 {
+                    position: absolute;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Check Boxes */
+                .check-box1 {
+                    position: relative;
+                    top: 16px;
+                    right: -30px;
+                    width: 10px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #ebf1e5; /* Semi-transparent white background */
+                    border: 2px solid black;
+                    color: #ebf1e5;
+                }
+                /* Check Boxes */
+                .check-box2 {
+                    position: relative;
+                    top: 28px;
+                    right: -30px;
+                    width: 10px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #ebf1e5; /* Semi-transparent white background */
+                    border: 2px solid black;
+                    color: #ebf1e5;
+                }
+                /* Check Boxes */
+                .check-box3 {
+                    position: relative;
+                    top: 39px;
+                    right: -30px;
+                    width: 10px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #ebf1e5; /* Semi-transparent white background */
+                    border: 2px solid black;
+                    color: #ebf1e5;
+                }
+                /* Check Boxes */
+                .check-box4 {
+                    position: relative;
+                    top: 50px;
+                    right: -30px;
+                    width: 10px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #ebf1e5; /* Semi-transparent white background */
+                    border: 2px solid black;
+                    color: #ebf1e5;
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line2 {
+                    position: absolute;
+                    top: 234px;
+                    height: 700px;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line3 {
+                    position: absolute;
+                    top: 309px;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line4 {
+                    position: absolute;
+                    top: 384px;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line5 {
+                    position: absolute;
+                    top: 459px;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Green Box */
+                .inner-box {
+                    position: relative;
+                    top: -40px;
+                    left: -20px;
+                    width: 1000px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #566E3D; /* Semi-transparent white background */
+                    color: black;
+                    border-radius: 10px;
+                }
+                /* Google Sign-in 
+                NEEDS WORK */
+                #my-signin2 {
+                    position: absolute;                    
+                    top: 193px; /* Move further down */
+                    right: 200px; /* Move further to the right */
+                    width: 450px;  /* Set desired width */
+                    height: 50px;  /* Set desired height */
+                    transform: scale(1.4);
+                }
+                /* Apple Sign-in 
+                NEEDS WORK */
+                #appleid-signin {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 268px;
+                    right: 220px;
+                    width: 450px;  /* Set desired width */
+                    height: 50px;  /* Set desired height */
+                    transform: scale(1.4); /* Scale up the button */
+                }
+                /* Microsoft Sign-in 
+                NEEDS WORK */
+                #msal-login-button {
+                    position: absolute;
+                    top: 348px;
+                    right: 360px;
+                    background-color: #0078d4; /* Microsoft blue */
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transform: scale(1.8);
+                }
+                #msal-login-button:hover {
+                    background-color: #005a9e; /* Darker blue on hover */
+                }
+                /* Email Sign-in 
+                NEEDS WORK */
+                .email-login {
+                    position: absolute;
+                    top: 410px;
+                    left: 340px;
+                    height: 50px;
+                    width: 400px;
+                    padding: 5px 20px 5px 20px;
+                    background-color: #FE9920; /* Semi-transparent white background */
+                    color: black;
+                    border-radius: 10px;
+                    line-height: 5px;
+                }
+                .email-login a {
+                    color: inherit; /* Inherit color from the box */
+                    text-decoration: none; /* Remove underline from the link */
+                    display: block; /* Make the anchor tag a block element */
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .email-login:hover {
+                    opacity: 0.8; /* Optional: Add a hover effect */
+                    cursor: pointer; /* Change cursor to pointer to indicate clickable */
+                }
+            </style>
+            <section class="sign-up">
+                <div class="grid">
+                    <div class="header-container">
+                        <h1>Start Comparing Today!</h1>
+                        <p>Shop Smart, Save Smart!</p>
+                        <button id="sign-up-button">Sign Up!</button>
+                    </div>
+                    <div class="brand-images">
+                        <div class="row">
+                            <img id="amazon-icon" src="./assets/images/amazon-icon.png" width="80" height="80">
+                            <img id="grocery-outlet-icon" src="./assets/images/grocery-outlet-icon.png" width="80" height="80">
+                            <img id="walmart-icon" src="./assets/images/walmart-icon.png" width="80" height="80">
+                            <img id="target-icon" src="./assets/images/target-icon.png" width="80" height="80">
+                        </div>
+                        <div class="row">
+                            <img id="wholefoods-icon" src="./assets/images/wholefoods-icon.png" width="80" height="80">
+                            <img id="ralphs-icon" src="./assets/images/ralphs-icon.png" width="80" height="80">
+                            <img id="costco-icon" src="./assets/images/costco-icon.png" width="80" height="80">
+                            <img id="traderjoes-icon" src="./assets/images/traderjoes-icon.png" width="80" height="80">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-splurge">
+                <h2>Who Are We?</h2>
+                <p> <b>Save</b> The ultimate destination for comparing prices on groceries and other daily essentials. We’ll make it easy for you to find the best deals and save money on your everyday purchases. Whether it’s fresh produce, household items, or pantry staples, our platform provides real-time price comparisons from your favorite grocery stores. Join our community and make every dollar count today!</p>
+                <p> <b>Share</b> Once you’ve created your grocery list, we make it easy for you to share your list to others through SMS, email, or social media. All to make your eventual trip to the grocery store all the more worth it!</p>
+                <p> <b>Strength</b> Healthy wallet, healthy mind! We’ve integrated nutritional facts for users to be more conscientious of their choices while shopping.</p>
+            </section>
+
+        </main>
+
+        <div class="overlay-box">
+            <div class="inner-box">
+                <p>Login</p>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="horizontal-line1"></div>
+            <div class="horizontal-line2"></div>
+            <div class="horizontal-line3"></div>
+            <div class="horizontal-line4"></div>
+            <div class="horizontal-line5"></div>
+            <div class="check-box1"></div>
+            <div class="check-box2"></div>
+            <div class="check-box3"></div>
+            <div class="check-box4"></div>
+            <div id="my-signin2"></div>
+            <div id="appleid-signin" data-color="black" data-border="true" data-type="sign in"></div>
+            <button id="msal-login-button">Sign in with Microsoft</button>
+            <a href="NEEDS TO BE CREATED" class="email-login"></a>
+                <div class="email-login">
+                    <p>Login with Email</p>
+                </div>
+            </a>
+
+
+        </div>
+    </body>
+    <script>
+        // Google Sign-in
+        function onSuccess(googleUser) {
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+        }
+        function onFailure(error) {
+        console.log(error);
+        }
+        function renderButton() {
+        gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 340,
+            'height': 50,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+        });
+        }
+    </script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+    <script src="https://alcdn.msauth.net/lib/1.10.0/js/msal-browser.min.js"></script>
+    <script src="script.js"></script>
+
+</html>
