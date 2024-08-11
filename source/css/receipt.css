@@ -1,0 +1,87 @@
+#display {
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 1em 2em;
+    display: flex;
+    flex-direction: row;    
+    justify-content: flex-start;
+    align-items: auto;
+    height: 100vh; 
+    overflow-y: auto; 
+}
+
+#display h1 {
+    align-self: start;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-left: 0.5em;
+    white-space: nowrap;
+}
+
+#display h2 {
+    align-self: start;
+    padding: 0em 0.5em;
+    margin: 0.5em;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+#listandimage {
+    display: flex;
+    flex-direction: column;
+}
+
+#listandimg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    width: 90vw;
+    height: 95vh;
+}
+
+#list ul {
+    padding: 1em;
+    margin: 0;
+    text-align: left;
+    list-style-type: none;
+    font-size: large;
+    white-space: nowrap;
+}
+
+#list #items {
+    line-height: 2.5em;
+    font-weight: 600;
+}
+
+#list #prices {
+    flex-grow: 0.5;
+    text-align: right;
+    line-height: 2.5em;
+    font-weight: 400;
+    padding-left: 8em;
+}
+
+#listandimg div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#listandimg #store {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+#list {
+    display: flex;
+    flex-direction: row;
+}
+
