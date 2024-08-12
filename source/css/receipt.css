@@ -11,10 +11,7 @@
   height: auto;
 }
 
-button,
-#pencil {
-  background-color: aqua;
-  /* background-image: url("./assets/images/pencil-icon.png"); */
+.pencil {
   background: none;
   border: none;
   height: 25px;
@@ -47,6 +44,7 @@ h2 {
 #user-details h2 {
   padding: 0em 0.5em;
   margin: 0.5em;
+  width: auto;
   font-weight: 400;
   font-size: 1em;
 }
@@ -54,13 +52,14 @@ h2 {
 #user-details ul {
   text-align: left;
   list-style-type: none;
-  font-size: 1.5em;
   white-space: nowrap;
   padding: 1em;
   margin: 0;
   line-height: 2.5em;
+  font-size: 1.5em;
   font-weight: 600;
   height: 100%;
+  width: 5em;
 }
 
 .layout {
@@ -97,14 +96,55 @@ h2 {
   align-items: normal;
   align-content: normal;
   justify-content: normal;
-  /* margin-bottom: 10em; */
   max-width: 50vw;
   max-height: 27.5em;
   overflow: scroll;
 }
 
-#subtotal-total {
+#share-print-back {
   display: flex;
-  flex-direction: row;
-  justify-items: flex-start;
+  flex-direction: column;
+  flex-grow: 0.75;
+  width: 27.5em;
+  height: auto;
+  flex-wrap: nowrap;
+}
+
+.share-print-back-text {
+  background-color: #7c9e57;
+  border: none;
+  border-radius: 10em;
+  flex: 1 1 5em;
+  width: 50vw;
+  max-width: 50vw;
+  max-height: 3em;
+  margin: 0.5em 0em;
+  font: optional;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.share-print-back-text:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.share-print-back-text:hover {
+  background-color: #719150;
+}
+
+.share-print-back-text:focus {
+  box-shadow: rgb(102, 132, 72) 0 0 3px;
+  outline: none;
+}
+
+.share-print-back-text:disabled {
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.share-print-back-text:active {
+  background-color: rgb(102, 132, 72);
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
