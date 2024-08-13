@@ -20,6 +20,33 @@
   align-self: center;
 }
 
+#pencil-icon:hover{
+    box-shadow: rgb(109, 109, 109) 0 0 3px;
+  outline: none;
+  border-radius: 90% 50% 90% 10%;
+}
+
+#pencil-icon:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  #pencil-icon:focus {
+    box-shadow: rgb(97, 97, 97) 0 0 3px;
+    outline: none;
+  }
+  
+  #pencil-icon:disabled {
+    border-color: rgba(27, 31, 35, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    cursor: default;
+  }
+  
+  #pencil-icon:active {
+    background-color: rgb(188, 188, 188);
+    box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+  }
+
 #title-icon {
   display: flex;
   align-items: flex-end;
@@ -87,6 +114,7 @@ h2 {
   object-fit: contain;
   display: block;
   margin: 0.5em 0em;
+  border-radius: 10em;
 }
 
 .right-col {
@@ -113,24 +141,24 @@ h2 {
 .share-print-back-text {
   background-color: #7c9e57;
   border: none;
-  border-radius: 10em;
+  border-radius: 7.5em;
   flex: 1 1 5em;
   width: 50vw;
   max-width: 50vw;
   max-height: 3em;
   margin: 0.5em 0em;
   font: optional;
-  font-size: 1rem;
+  font-size: 1.25em;
   font-weight: 600;
 }
+
+.share-print-back-text:hover {
+    background-color: #719150;
+  }
 
 .share-print-back-text:focus:not(:focus-visible):not(.focus-visible) {
   box-shadow: none;
   outline: none;
-}
-
-.share-print-back-text:hover {
-  background-color: #719150;
 }
 
 .share-print-back-text:focus {
