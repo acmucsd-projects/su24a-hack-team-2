@@ -10,7 +10,7 @@
         <title>Go Go Grocery!</title>
     </head>
 
-    <body>
+    <body id="user-page">
         <header>
             <img id="home-button-logo" src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E" onclick="location.href='./index.html';">
             <h1>Go Go Grocery</h1>
@@ -28,21 +28,34 @@
                     <a href="./user-page.html">Sign In</a>
                 </div>
             </div>
-        </header>
-
+        </header> 
         <main>
-            <div class="all-text">
-                <h1>Hello!</h1>
-                <h3> What would you like to do today?</h3>
-                <div class="user-links">
-                    <a href="./make-list.html">Create New List</a>
-                    <br>
-                    <a href="./receipt.html">View Existing List</a>
+            <div id="user-details-emoji">
+                <div id="user-details">
+                    <div id="user-greeting-emoji">
+                        <div class="user-greeting">
+                            <h1>Hello,&nbsp;</h1>
+                            <h1>John Doe!</h1>
+                        </div>
+                    </div>
+                    <h3> What would you like to do today?</h3>
+                    <div class="user-links">
+                        <button id="button_1" class="interface-button">
+                            <a href="./make-list.html">Create New List</a>
+                        </button>
+                        <br>
+                        <button id="button_2" class="interface-button">
+                            <a href="./receipt.html">View Existing List</a>
+                        </button> 
+                    </div>
                 </div>
+                <h1 id="emoji"></h1>
             </div>
         </main>
+        
         <br>
         <br>
+        <script src="./js/user-page.js"></script>
     </body>
 
 </html>
