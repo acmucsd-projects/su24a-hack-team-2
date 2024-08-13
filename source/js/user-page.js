@@ -5,30 +5,19 @@ const emoji_text = document.querySelector("#emoji");
 button_1.addEventListener("mouseover", () => {
   emoji_text.textContent = "🗒️✍️";
   emoji_text.classList.remove('fade-out')
-},500);
+},1000);
 
 button_1.addEventListener("mouseout", () => {
   emoji_text.textContent = "";
-  emoji_text.classList.remove('fade-out')
-},500);
+  emoji_text.classList.add('fade-out')
+},1000);
 
 button_2.addEventListener("mouseover", () => {
   emoji_text.textContent = "📋🧐💭";
   emoji_text.classList.remove('fade-out')
-},500);
+},1000);
 
 button_2.addEventListener("mouseout", () => {
   emoji_text.textContent = "";
-  emoji_text.classList.remove('fade-out')
-},500);
-
-const button = document.querySelector(".button");
-const textElement = document.querySelector(".text-element");
-
-button.addEventListener("mouseover", () => {
-  textElement.textContent = "Text Changed!";
-});
-
-button.addEventListener("mouseout", () => {
-  textElement.textContent = "Original Text";
-});
+  emoji_text.classList.add('fade-out')
+},1000);
