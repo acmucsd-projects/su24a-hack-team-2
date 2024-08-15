@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-        <meta name="google-signin-client_id" content="79858330616-nf0o1rqknhqa2ieqilhn8ga86uk79fce.apps.googleusercontent.com">
+        <meta name="google-signin-client_id" content="79858330616-tb4qfqp462alu2hip236g8134596hq8m.apps.googleusercontent.com">
         <meta name="appleid-signin-client-id" content="[CLIENT_ID]">
         <meta name="appleid-signin-scope" content="[SCOPES]">
         <meta name="appleid-signin-redirect-uri" content="[REDIRECT_URI]">
@@ -13,6 +13,7 @@
         <meta name="appleid-signin-use-popup" content="true">
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/index.css">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
         <title>Go Go Grocery!</title>
     </head>
 
@@ -178,10 +179,10 @@
                 NEEDS WORK */
                 #my-signin2 {
                     position: absolute;                    
-                    top: 193px; /* Move further down */
-                    right: -50px; /* Move further to the right */
-                    width: 650px;  /* Set desired width */
-                    height: 50px;  /* Set desired height */
+                    top: 193px; 
+                    right: -50px; 
+                    width: 650px;  
+                    height: 50px;  
                     padding: 0px 20px 3px 150px;
                     transform: scale(1.4);
                     width: 1350px;
@@ -216,8 +217,7 @@
                 #msal-login-button:hover {
                     background-color: #005a9e; /* Darker blue on hover */
                 }
-                /* Email Sign-in 
-                NEEDS WORK */
+                /* Email Sign-in */
                 .email-login {
                     position: absolute;
                     top: 408px;
@@ -312,7 +312,7 @@
             </div>
             <div class="email-auth-box" id="email-auth-box">
                 <form id="email-auth-form">
-                    <h2>Email Authentication</h2>
+                    <h2>Login</h2>
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                     <br><br>
@@ -320,6 +320,7 @@
                     <input type="text" id="name" name="name" required>
                     <br><br>
                     <button type="submit">Submit</button>
+                    <button type="reset">Clear</button>
                 </form>
             </div>
 
@@ -337,7 +338,6 @@
             const email = document.getElementById('email').value;
             const name = document.getElementById('name').value;
 
-            console.log(`Email: ${email}, Name: ${name}`);
 
             alert("Authentication successful!");
 
@@ -346,25 +346,38 @@
         });
         // Google Sign-in
         function onSuccess(googleUser) {
-        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+            window.location.href = 'user-page.html';
         }
+        //ERROR ALWAYS OCCURING, FIX
         function onFailure(error) {
-        console.log(error);
+            console.log('Sign-in error:', error);
+            alert('An error occurred during sign-in: ' + error.error);
         }
         function renderButton() {
-        gapi.signin2.render('my-signin2', {
-            'scope': 'profile email',
-            'width': 340,
-            'height': 50,
-            'longtitle': true,
-            'theme': 'dark',
-            'onsuccess': onSuccess,
-            'onfailure': onFailure
-        });
+            gapi.signin2.render('my-signin2', {
+                'scope': 'profile email',
+                'width': 340,
+                'height': 50,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': onSuccess,
+                'onfailure': onFailure
+            });
         }
+        function init() {
+            console.log('Loading Google API...');
+            gapi.load('auth2', function() {
+                gapi.auth2.init().then(function() {
+                    console.log('Google API initialized successfully.');
+                    renderButton();
+                }).catch(function(error) {
+                    console.error('Error during gapi.auth2.init:', error);
+                });
+            });
+        }
+        document.addEventListener('DOMContentLoaded', init);
     </script>
-    
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
     <script src="https://alcdn.msauth.net/lib/1.10.0/js/msal-browser.min.js"></script>
     <script src="script.js"></script>
