@@ -1,6 +1,5 @@
-import config from '../../config/config';
-import connect from '../../config/connect';
-import userSchema from '../../config/userSchema';
+var connect = require('../../config/connect');
+var userSchema = require('../../config/userSchema');
 
 const bodyParser = require('body-parser');
 const express = require('express');
