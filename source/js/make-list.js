@@ -59,6 +59,12 @@ function init(){
         }
     });
 
+
+    document.querySelectorAll('.extra-images').forEach(function(image){
+        image.addEventListener("click", () => change_main_image(image, image.src));
+    });
+
+
 }
 
 /**
@@ -90,9 +96,26 @@ function change_to_description(description_button, nutrition_button, displayed_t
     nutrition_button.style.backgroundColor = 'rgb(206, 208, 192)';
 }
 
+/**
+ * When an extra image is clicked on, the display switches the larger image with the extra image selected 
+ * @param {*} image extra image selected
+ * @param {*} new_src new source for the main image (technically not necessary as a parameter but leave it for now.)
+ */
+function change_main_image(image, new_src){
+    var current_main = document.getElementById("main-image");
+    var old_main_src = current_main.src;
+
+    current_main.src = new_src;
+    image.src = old_main_src;
+}
+
+
+/**
+ * Used to display the proper information for each grocery item selected in the list.
+ * @param {*} grocery_item specific item selected by the user
+ * @param {*} item_name Name displayed currently on the second column (technically not necessary but good to keep)
+ */
 function displayGroceryInformation(grocery_item, item_name){
-
-
     const rest_list = document.querySelectorAll('.groceryItem');
     for(var i = 0; i < rest_list.length; i++){
         rest_list[i].style.backgroundColor = 'rgb(225, 228, 207)';
@@ -116,7 +139,7 @@ function displayGroceryInformation(grocery_item, item_name){
 
     displayed_text.textContent = newName;
 
-    var extra_imgs = document.querySelectorAll("[id='extra-images']");
+    var extra_imgs = document.querySelectorAll("[class='extra-images']");
     for(var i = 0; i < extra_imgs.length; i++){
         let file = "./assets/images/extra-" + imageName + (i+1) + "-icon.png";
 
@@ -130,6 +153,11 @@ function displayGroceryInformation(grocery_item, item_name){
 
 }
 
+/**
+ * does not work yet - trying to figure out how to use both jpg and png images.
+ * @param {*} img image whose source will be changed.
+ * @param {*} name specific name of the image to be added to an already-included path.
+ */
 function tryImages(img, name){
     img.src = "./assets/images/" + name + ".jpg";
     img.onerror = function() {
