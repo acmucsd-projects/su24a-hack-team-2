@@ -192,7 +192,7 @@
                     display: block; 
                     margin-bottom: 5px;
                 }
-                .email-auth-box .navigate-button {
+                .email-auth-box .exit-button {
                     position: absolute; 
                     margin-top: 10px; 
                     display: block; 
@@ -252,36 +252,32 @@
             <div class="email-auth-box" id="email-auth-box">
                 <form id="email-auth-form">
                     <h2>Login</h2>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <br><br>
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
                     <br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br><br>
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" name="password" required>
+                    <br><br>
                     <button type="submit">Submit</button>
                     <button type="reset">Clear</button>
-                    <button type="button" class="navigate-button" onclick="window.location.href='index.html'">X</button>
+                    <button type="button" class="exit-button" onclick="window.location.href='index.html'">X</button>
                 </form>
             </div>
-
-
         </div>
     </body>
     <script>
         document.getElementById('email-auth-form').addEventListener('submit', function(event) {
             event.preventDefault();
-
             const email = document.getElementById('email').value;
             const name = document.getElementById('name').value;
             const password = document.getElementById('password').value;
-
             alert("Authentication successful!");
-
-            document.getElementById('email-auth-box').style.display = 'none';
             window.location.href = 'user-page.html';
         });  
     </script>
-    <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
     <script src="script.js"></script>
 
 </html>
