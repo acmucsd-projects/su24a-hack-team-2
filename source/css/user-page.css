@@ -12,25 +12,31 @@
     display: flex;
     flex-direction: row;
     align-content: space-between;
+    background-color: #FE9920;
+    padding-bottom: 8em;
 }
 
-#emoji {
-    margin: 10rem;
+.emoji {
+    /* margin: 5rem; */
     height: fit-content;
     width: fit-content;
     justify-self: center;
     align-self: center;
     text-align: center;
-    font-size: 8em;
+    font-size: 7.5rem;
     white-space: nowrap;
+    position: relative;
 }
 
 .user-links button, .user-links button a {
     color: #000000;
     font-size: 1.5em;
-    margin: 1em 0em;
+    font-weight: 600;
+    margin: 0em 1em;
     text-decoration: none;
-    padding: 0.5em 1em;
+    text-align: center;
+    height: 15rem;
+    padding: 3em 0;
 }
 
 .user-greeting {
@@ -43,6 +49,7 @@
 .user-greeting h1 {
     margin-bottom: 0em;
     white-space: nowrap;
+    margin: 2rem 5rem 0;
 }
 
 #user-details h3 {
@@ -50,23 +57,40 @@
     font-weight: 400;
     margin-top: 0em;
     white-space: nowrap;
+    margin: 0em 3.5em;
 }
 
 #user-details {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0em 3.5em;
+    position: relative;
   }
+
+.user-links {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 2rem 0;
+  justify-content: space-between;
+}
+
+.green-box {
+  display: flex;
+  flex-direction: column;
+  margin: 0em 1em 0em;
+  padding: 0;
+  background-color: #7c9e57;
+  border-radius: 2em;
+}
 
 .interface-button {
     flex-grow: 0.75;
-    width: auto;
+    width: 45vw;
     height: auto;
     flex-wrap: nowrap;
     background-color: #7c9e57;
   border: none;
-  border-radius: 7.5em;
+  border-radius: 2em;
 }
 
 .user-links button:hover {
@@ -97,4 +121,12 @@
 .fade-out {
     opacity: 0;
     transform: scale(0.95);
+}
+
+.bouncing-logo {
+  width: 7.5rem;
+  height: 7.5rem;
+  background-image: url(./assets/images/final-icon1.png);
+  position: absolute;
+  border-radius: 50%;
 }
