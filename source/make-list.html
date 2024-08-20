@@ -6,6 +6,7 @@
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/make-list.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <script src="./js/make-list.js" type="module"></script>
         <title>Go Go Grocery!</title>
     </head>
@@ -33,35 +34,54 @@
             <!--CODE FOR THE PRODUCT LIST (wireframe page 6) - item | item image | description/nutrition fact-->
 
             <!--Add Item Button - on click, sends to item-price.html page-->
-            <button class="next-page-buttons" id="add-item-button" onclick="location.href = './item-price.html';">Add Item</button> 
+            <!-- <button class="next-page-buttons" id="add-item-button" onclick="location.href = './item-price.html';">Add Item</button> -->
 
 
             <div>
-                <textarea rows="1" cols="170" id="grocery-header" placeholder="Enter List Name"></textarea>
+                <div class='title'>
+                    <div class='list-name'><h1>
+                        <span id="listHeading">Current List Name</span>
+                        <button id="editListBtn"><i class="fas fa-pencil-alt"></i></button>
+                    </h1> 
+                    
+                
+                    </div>
+                    <div class="next-page-buttons">
+                        <button class="menuBTN" id="addItemBtn" onclick="location.href = './item-price.html';">Add Item</button>
+                        <!-- <div class='divider'>hs</div> -->
+                        <button class="menuBTN" id="receiptPageBtn" onclick="location.href= './compare-stores.html';">Finished With Your List?</button>
+    
+                    </div>
+                    
+                </div>
 
                 <div class="information-holder"> <!--3 Column Display-->
                     <!--Column 1: Holds Actual List of Items-->
                     <div class="column1">
                         <list id="item-list">
-                            <ul>hello</ul>
+                            <ul class="groceryItem">Banana</ul>
+                            <ul class="groceryItem">Strawberry</ul>
+                            <ul class="groceryItem">Blueberry</ul>
+                            <ul class="groceryItem">Pineapple</ul>
+                            <ul class="groceryItem">Grape</ul>
                         </list>
                     </div>
                     
                     <!--Individual Item Display-->
                     <div class="column2">
-                        <h2 id="item-name">Name</h2>
+                        <h2 id="item-name">Banana</h2>
                         <div class="align-images-center">
-                            <img id="main-image" src="./assets/images/traderjoes-icon.png" width="100">
+                            <img id="main-image" src="./assets/images/banana-icon.png" width="100">
                         </div>
 
                         <!--Holds Extra Images of Item Selected-->
                         <div class="image-holder">
-                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
-                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
-                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
-                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
-                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
-                            <img id="extra-images" src="./assets/images/traderjoes-icon.png" width="100">
+                            <img class="extra-images" src="./assets/images/extra-banana1-icon.png" width="100">
+                            <img class="extra-images" src="./assets/images/extra-banana2-icon.png" width="100">
+                            <img class="extra-images" src="./assets/images/banana-icon.png" width="100">
+                            <img class="extra-images" src="./assets/images/banana-icon.png" width="100">
+                            <img class="extra-images" src="./assets/images/banana-icon.png" width="100">
+                            <img class="extra-images" src="./assets/images/banana-icon.png" width="100">
                         </div>
                     </div>
                     
@@ -72,14 +92,14 @@
                                 <button id="description-button">Description</button>
                                 <button id="nutrition-button">Nutrition Facts</button>
                             </div>
-                            <p id="displayed-text">Description Text</p>
+                            <p id="displayed-text">Banana</p>
                         </div>
                     </div>
 
                 </div>
             </div>
-            <!--Finished List Button: on click, sends to compare-stores.html-->
-            <button class="next-page-buttons" id="finished-list-button" onclick="location.href= './compare-stores.html';">Finished with your list?</button>
+            <!--Finished List Button: on click, sends to compare-stores.html
+            <button class="next-page-buttons" id="finished-list-button" onclick="location.href= './compare-stores.html';">Finished with your list?</button> -->
         </main>
     </body>
 

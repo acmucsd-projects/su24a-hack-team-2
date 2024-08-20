@@ -1,6 +1,6 @@
 
 /*Formatting for the text area*/
-#grocery-header{
+/*#grocery-header{
     background: #FC9E5F;    
     border-radius: 10px;
 
@@ -11,17 +11,29 @@
     margin: 10px;
 }
 
-/*Changing the color of the text inside the text area*/
+/*Changing the color of the text inside the text area
 ::placeholder{
     color:rgb(128, 57, 9);
     font-size: 110%;
     font-weight: bold;
+}*/
+
+.title{
+    display: flex;
+    justify-content: space-between; /* Aligns text left and buttons right */
+    align-items: center; /* Aligns text and buttons vertically at the same level */
+    padding: 10px; /* Optional: Adds padding around the title */
+}
+
+
+.list-name{
+    margin:0;
 }
 
 /*Formatting of the 'Add Item' and 'Finished with your list' buttons*/
 .next-page-buttons{
     background: #7C9E57;
-    border-radius: 10px;
+    border-radius: 30px;
     
     padding:10px;
     margin:10px;
@@ -29,13 +41,42 @@
     font-size: 110%;
     font-weight: bold;
 
-    justify-content: left;
+    display:flex;
+    gap:10px;
+
 }
 
 /*Changing cursor visuals + opacity of 'add item' and 'finished with your list' buttons */
 .next-page-buttons:hover{
     cursor:pointer;
     opacity: 80%;
+}
+
+#editListBtn {
+    background-color: transparent; /* Dark Blue */
+    border: none;
+    font-size: large;
+    
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menuBTN {
+    background-color: #7c9e57; /* Green */
+    border: none;
+    padding: 5px 18px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    /* float: right; */
+}
+
+.menuBTN:hover {
+    background-color: #4f6834; /* Darker Green */
 }
 
 /*formatting for the entirety of the 3-column display*/
@@ -61,7 +102,7 @@
 .column1{
     #item-list{
         font-weight: bold;
-        font-size: 125%
+        font-size: 150%
     }    
 }
 
@@ -86,7 +127,7 @@
 
     h2{
         margin: 10px;
-        font-size: 150%;
+        font-size: 175%;
     }
 
 }
@@ -196,3 +237,25 @@
     scroll-behavior:auto;
 }
 
+.extra-images:hover{
+    cursor:pointer;
+}
+
+.image-holder img{
+    transition: 1s ease;
+}
+
+.image-holder img:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+}
+
+
+.groceryItem:hover{
+    cursor:pointer;
+
+    background: transparent;
+    color: #69563b;
+}
