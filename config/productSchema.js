@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
  
-const productSchema = new Schema({
+const productSchema = new mongoose.Schema({
   id: {
     type: mongoose.ObjectId,
   },
@@ -17,3 +17,5 @@ const productSchema = new Schema({
 });
  
 const Product = mongoose.model('Product', productSchema);
+
+// console.log('Product Schema loaded');

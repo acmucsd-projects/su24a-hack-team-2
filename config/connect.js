@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 
 mongoose.connect(config.DB_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true }).then(() => {
+    useUnifiedTopology: true,
+    dbName: 'mainDB' }).then(() => {
   console.log('Connected to MongoDB database');
 });
+

@@ -1,5 +1,6 @@
 var connect = require('../../config/connect');
 var userSchema = require('../../config/userSchema');
+var productSchema = require('../../config/productSchema');
 
 const bodyParser = require('body-parser');
 const express = require('express');
