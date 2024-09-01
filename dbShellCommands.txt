@@ -1,4 +1,4 @@
-mongosh "mongodb+srv://gogogrocery.yameky9.mongodb.net/" --apiVersion 1 --username goGoGrocery
+mongosh "mongodb+srv://gogogrocery.yameky9.mongodb.net" --apiVersion 1 --username goGoGrocery
 show dbs
 use [dbName]
 show tables
@@ -8,3 +8,27 @@ AFTER CONNECTING TO THE DATABASE:
 db.login.insertOne({email:"ex@exe.com",password:"sup3rs3cure",name:"ex exe"})
 
 command cheat sheet: https://gist.github.com/michaeltreat/d3bdc989b54cff969df86484e091fd0c
+
+
+
+//to download the data from mirabelle.openfoodfacts.org [CSV without limit]
+
+-- Products from USA that have been scanned at least one time
+select * from [all]
+where countries_en like "%United States%" and unique_scans_n is not null
+order by unique_scans_n desc
+-- the limit here displays 20 results; the link "CSV without limit" below allows to download all the data without limit
+limit 20
+
+references:
+
+https://mirabelle.openfoodfacts.org/products?sql=--+Products+from+Germany+that+have+been+scanned+at+least+one+time%0D%0Aselect+*+from+%5Ball%5D%0D%0Awhere+countries_en+like+%22%25United+States%25%22+and+unique_scans_n+is+not+null%0D%0Aorder+by+unique_scans_n+desc%0D%0A--+the+limit+here+displays+20+results%3B+the+link+%22CSV+without+limit%22+below+allows+to+download+all+the+data+without+limit%0D%0Alimit+20
+
+https://wiki.openfoodfacts.org/Reusing_Open_Food_Facts_Data
+
+https://www.mongodb.com/pricing
+
+
+
+// from the same directory as the csv file, use this command to import the csv file into the database
+mongoimport --uri "mongodb+srv://goGoGrocery:<PASSWORD>@gogogrocery.yameky9.mongodb.net/?retryWrites=true&w=majority&appName=goGoGrocery" --db mainDB --collection nutrition --type csv --file ./productsUSA.csv --headerline --drop

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <!-- <meta name="google-signin-client_id" content="79858330616-tb4qfqp462alu2hip236g8134596hq8m.apps.googleusercontent.com">
+        <meta name="appleid-signin-client-id" content="[CLIENT_ID]">
+        <meta name="appleid-signin-scope" content="[SCOPES]">
+        <meta name="appleid-signin-redirect-uri" content="[REDIRECT_URI]">
+        <meta name="appleid-signin-state" content="[STATE]">
+        <meta name="appleid-signin-nonce" content="[NONCE]">
+        <meta name="appleid-signin-use-popup" content="true"> -->
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+        <title>Go Go Grocery!</title>
+    </head>
+
+    <body>
+        <header>
+            <img id="home-button-logo" src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E" onclick="location.href='./index.html';">
+            <h1>Go Go Grocery</h1>
+            <div class="header-links">
+                <div class="icon+link">
+                    <img src="./assets/images/search-icon-black.png" width="20" height="20">
+                    <a href="./user-page.html">Search Items</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/cart3.png" width="20" height="20">
+                    <a href="./make-list.html">Shopping List</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/person-icon.png" width="20" height="20">
+                    <a href="./user-page.html">Sign In</a>
+                </div>
+            </div>
+        </header>
+
+        <br>
+        <br>
+        <main class="info">
+            <style>
+                body {
+                    position: relative;
+                }
+                /* Grayish Box */
+                .overlay-box {
+                    position: fixed; /* or absolute, depending on your needs */
+                    top: 100px; /* Adjust as needed */
+                    right: 200px; /* Adjust as needed */
+                    width: 1000px; /* Adjust as needed */
+                    height: 500px;
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 25px;
+                    font-weight: bold;
+                    background-color: #ebf1e5; /* Semi-transparent background */
+                    color: white;
+                    border-radius: 10px;
+                    z-index: 1000; /* Higher than other elements */
+                }
+                /* Red Line */
+                .vertical-line {
+                    position: absolute;
+                    top: 140px;
+                    right: 875px;
+                    width: 2px; /* Line thickness */
+                    height: 70%; /* Full height of the container */
+                    background-color: #AA4A4A; /* Line color */
+                    margin: 0 20px; /* Spacing around the line */
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line1 {
+                    position: absolute;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Check Boxes */
+                .check-box1 {
+                    position: relative;
+                    top: 16px;
+                    right: -30px;
+                    width: 10px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #ebf1e5; /* Semi-transparent white background */
+                    border: 2px solid black;
+                    color: #ebf1e5;
+                }
+                /* Check Boxes */
+                .check-box2 {
+                    position: relative;
+                    top: 28px;
+                    right: -30px;
+                    width: 10px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #ebf1e5; /* Semi-transparent white background */
+                    border: 2px solid black;
+                    color: #ebf1e5;
+                }
+                /* Check Boxes */
+                .check-box3 {
+                    position: relative;
+                    top: 39px;
+                    right: -30px;
+                    width: 10px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #ebf1e5; /* Semi-transparent white background */
+                    border: 2px solid black;
+                    color: #ebf1e5;
+                }
+                /* Check Boxes */
+                .check-box4 {
+                    position: relative;
+                    top: 50px;
+                    right: -30px;
+                    width: 10px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #ebf1e5; /* Semi-transparent white background */
+                    border: 2px solid black;
+                    color: #ebf1e5;
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line2 {
+                    position: absolute;
+                    top: 234px;
+                    height: 700px;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line3 {
+                    position: absolute;
+                    top: 309px;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line4 {
+                    position: absolute;
+                    top: 384px;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Criscrossing Black Lines */
+                .horizontal-line5 {
+                    position: absolute;
+                    top: 459px;
+                    width: 95%; /* Full width of the container */
+                    height: 2px; /* Line thickness */
+                    background-color: black; /* Line color */
+                    margin: 20px 0; /* Spacing around the line */
+                }
+                /* Green Box */
+                .inner-box {
+                    position: relative;
+                    top: -40px;
+                    left: -20px;
+                    width: 1000px;
+                    margin-top: 20px; /* Space between outer and inner box */
+                    padding: 20px;
+                    background-color: #566E3D; /* Semi-transparent white background */
+                    color: black;
+                    border-radius: 10px;
+                }
+                .email-auth-box {
+                    position: fixed;
+                    top: 250px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 300px;
+                    padding: 20px;
+                    background-color: #ebf1e5;
+                    color: black;
+                    border-radius: 10px;
+                    z-index: 1000;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                }
+                .email-auth-box label {
+                    display: block; 
+                    margin-bottom: 5px;
+                }
+                .email-auth-box .exit-button {
+                    position: absolute; 
+                    margin-top: 10px; 
+                    display: block; 
+                    text-align: center; 
+                    top: 5px;
+                    right: 20px;
+                    color: red;
+                }
+            </style>
+            <section class="sign-up">
+                <div class="grid">
+                    <div class="header-container">
+                        <h1>Start Comparing Today!</h1>
+                        <p>Shop Smart, Save Smart!</p>
+                        <button id="sign-up-button">Sign Up!</button>
+                    </div>
+                    <div class="brand-images">
+                        <div class="row">
+                            <img id="amazon-icon" src="./assets/images/amazon-icon.png" width="80" height="80">
+                            <img id="grocery-outlet-icon" src="./assets/images/grocery-outlet-icon.png" width="80" height="80">
+                            <img id="walmart-icon" src="./assets/images/walmart-icon.png" width="80" height="80">
+                            <img id="target-icon" src="./assets/images/target-icon.png" width="80" height="80">
+                        </div>
+                        <div class="row">
+                            <img id="wholefoods-icon" src="./assets/images/wholefoods-icon.png" width="80" height="80">
+                            <img id="ralphs-icon" src="./assets/images/ralphs-icon.png" width="80" height="80">
+                            <img id="costco-icon" src="./assets/images/costco-icon.png" width="80" height="80">
+                            <img id="traderjoes-icon" src="./assets/images/traderjoes-icon.png" width="80" height="80">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-splurge">
+                <h2>Who Are We?</h2>
+                <p> <b>Save</b> The ultimate destination for comparing prices on groceries and other daily essentials. We’ll make it easy for you to find the best deals and save money on your everyday purchases. Whether it’s fresh produce, household items, or pantry staples, our platform provides real-time price comparisons from your favorite grocery stores. Join our community and make every dollar count today!</p>
+                <p> <b>Share</b> Once you’ve created your grocery list, we make it easy for you to share your list to others through SMS, email, or social media. All to make your eventual trip to the grocery store all the more worth it!</p>
+                <p> <b>Strength</b> Healthy wallet, healthy mind! We’ve integrated nutritional facts for users to be more conscientious of their choices while shopping.</p>
+            </section>
+
+        </main>
+
+        <div class="overlay-box">
+            <div class="inner-box">
+                <p>Authentication</p>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="horizontal-line1"></div>
+            <div class="horizontal-line2"></div>
+            <div class="horizontal-line3"></div>
+            <div class="horizontal-line4"></div>
+            <div class="horizontal-line5"></div>
+            <div class="check-box1"></div>
+            <div class="check-box2"></div>
+            <div class="check-box3"></div>
+            <div class="check-box4"></div>
+            <div class="email-auth-box" id="email-auth-box">
+                <form id="email-auth-form">
+                    <h2>Login</h2>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br><br>
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" name="password" required>
+                    <br><br>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Clear</button>
+                    <button type="button" class="exit-button" onclick="window.location.href='index.html'">X</button>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        document.getElementById('email-auth-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            alert("Authentication successful!");
+            window.location.href = 'user-page.html';
+        });  
+    </script>
+    <script src="script.js"></script>
+
+</html>
