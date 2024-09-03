@@ -20,6 +20,8 @@ order by unique_scans_n desc
 -- the limit here displays 20 results; the link "CSV without limit" below allows to download all the data without limit
 limit 20
 
+//click on [CSV without limit] to download the data: I renamed it to [productsUSA.csv]
+
 references:
 
 https://mirabelle.openfoodfacts.org/products?sql=--+Products+from+Germany+that+have+been+scanned+at+least+one+time%0D%0Aselect+*+from+%5Ball%5D%0D%0Awhere+countries_en+like+%22%25United+States%25%22+and+unique_scans_n+is+not+null%0D%0Aorder+by+unique_scans_n+desc%0D%0A--+the+limit+here+displays+20+results%3B+the+link+%22CSV+without+limit%22+below+allows+to+download+all+the+data+without+limit%0D%0Alimit+20
