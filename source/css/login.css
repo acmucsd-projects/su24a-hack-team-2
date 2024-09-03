@@ -1,0 +1,100 @@
+#body1{
+    background-color: bisque;
+}
+.login_header{
+    background-color: #B9A44C;
+    display: flex;
+    top: 0;
+    position: fixed;
+    width:100%;
+    height: 8%;
+    right: 0;
+}
+#search-icon-black{
+    position: relative;
+    left: 25%;
+    height: 40px;
+    top: 16%;
+}
+#shopping_link{
+    position: relative;
+    left: 25.5%;
+    height: 45px;
+    top: 50%;
+}
+#cart-icon{
+    position: relative;
+    left: 30.5%;
+    height: 35px;
+    top: 30%;
+}
+
+#shopping_btn{
+    position: relative;
+    left: 25.5%;
+    height: 45px;
+    top: 26%;
+    color:beige;
+    font-size: 30px;
+    font-family:'Segoe UI';
+}
+#cart-btn{
+    position: relative;
+    left: 31.5%;
+    height: 45px;
+    top: 26%;
+    color:beige;
+    font-size: 30px;
+    font-family:'Segoe UI';
+}
+.card{
+    background-color: #B9A44C;
+    position: absolute;
+    height: 500px;
+    left: 420px;
+    width: 600px;
+    border-radius: 50px;
+    top: 150px;
+    border-color: black;
+    border-width: 10px;
+}
+.card > #login{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    height: 70px;
+    width: 500px;
+    position: absolute;
+    top: 21%;
+    left: 7%;
+    border-radius: 20px;
+    border-color: rgb(8, 53, 38);
+}
+.card > #password{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+    text-align: center;
+    height: 70px;
+    width: 500px;
+    position: absolute;
+    top: 48%;
+    left: 7%;
+    border-radius: 20px;
+    border-color: aquamarine;
+}
+.card > #login_btn{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:25px ;
+    color:bisque;
+    font-style:normal;
+    text-align: center;
+    height: 55px;
+    width: 95px;
+    position: absolute;
+    top: 70%;
+    left: 42%;
+    border-radius: 20px;
+    border-color: solid black;
+    background-color: rgb(97, 121, 184);
+}
