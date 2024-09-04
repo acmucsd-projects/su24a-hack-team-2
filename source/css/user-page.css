@@ -14,7 +14,7 @@
 
 .emoji {
   text-align: center;
-  font-size: 7.5rem;
+  font-size: 7rem;
   position: relative;
 }
 
@@ -68,6 +68,25 @@
   margin: 2rem 2rem;
   justify-content: space-evenly;
   width: 96vw;
+}
+
+#existing_grocery_list_container {
+  height: 15em;
+  overflow-y: auto;
+  margin-bottom: 3em;
+}
+
+#existing_grocery_list {
+  display: none;
+  list-style-type: none;
+  font-size: 1.5em;
+  font-weight: 400;
+  height: auto;
+  padding: 0em 1.5em;
+}
+
+#existing_grocery_list li {
+  padding: 0.5em 0em;
 }
 
 .green-box {
