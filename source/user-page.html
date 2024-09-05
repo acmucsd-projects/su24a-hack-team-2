@@ -6,26 +6,68 @@
         <meta charset="UTF-8">
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/user-page.css">
         <title>Go Go Grocery!</title>
     </head>
 
-    <body>
+    <body id="user-page">
         <header>
-            <img src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E">
+            <img id="home-button-logo" src="./assets/images/final-icon1.png" alt="placeholder icon" width="70" height="70" title="&#x1F60E" onclick="location.href='./index.html';">
             <h1>Go Go Grocery</h1>
-            <a>Search</a>
-            <a href="./make-list.html">Shopping List</a>
-            <a href="./user-page.html">Sign In</a>
-        </header>
-
+            <div class="header-links">
+                <div class="icon+link">
+                    <img src="./assets/images/search-icon-black.png" width="20" height="20">
+                    <a href="./user-page.html">Search Items</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/cart3.png" width="20" height="20">
+                    <a href="./make-list.html">Shopping List</a>
+                </div>
+                <div class="icon+link">
+                    <img src="./assets/images/person-icon.png" width="20" height="20">
+                    <a href="./user-page.html">Sign In</a>
+                </div>
+            </div>
+        </header> 
         <main>
-            <h1> WIREFRAME PAGE 5</h1> <!-- delete later -->
-            <a href="./make-list.html">Create New List</a>
-            <br>
-            <a href="./receipt.html">View Existing List</a>
+            <div id="user-details-emoji">
+                <div id="user-details">
+                    <div id="user-greeting-emoji">
+                        <div class="user-greeting">
+                            <h1>Hello, John Doe!</h1>
+                        </div>
+                    </div>
+                    <img class="bouncing-logo" src="./assets/images/final-icon1.png" alt="animated logo">
+                    <h3> What would you like to do today?</h3>
+                </div>
+            </div>
+            <div class="user-links">
+                <div class="green-box">
+                    <button id="button_1" class="interface-button">
+                        <a  href="./make-list.html">Create New List</a>    
+                    </button>
+                    <h1 id="emoji_1" class="emoji">&nbsp;</h1>
+                
+                </div>
+                <div id="dropdown_area" class="green-box">
+                    <button id="button_2" class="interface-button">
+                        <a>View Existing List</a>
+                    </button>
+                    <div id="existing_grocery_list_container">
+                        <ul id="existing_grocery_list">
+                            <li><a href="">Sunday Grocery Run</a></li>
+                            <li><a href="">Target Run</a></li>
+                            <li><a href="">Erewhon Haul</a></li>
+                            <li><a href="">Costco Trip</a></li>
+                            <li><a href="">Breakfast Club</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>      
         </main>
         <br>
         <br>
+        <script src="./js/user-page.js"></script>
     </body>
 
 </html>

@@ -1,0 +1,145 @@
+#user-page {
+  background-image: url(../assets/images/gradient-bg-img.png);
+  background-size: cover;
+}
+
+#user-details-emoji {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  background-color: #fe9920;
+  width: 100vw;
+  padding-bottom: 8em;
+}
+
+.emoji {
+  text-align: center;
+  font-size: 7rem;
+  position: relative;
+}
+
+.user-links button,
+.user-links button a {
+  color: #000000;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0em 1em;
+  text-decoration: none;
+  text-align: center;
+  height: 15rem;
+  padding: 3em 0;
+}
+
+.user-greeting {
+  display: flex;
+  flex-direction: row;
+  font-weight: 800;
+  font-size: 2em;
+}
+
+.emoji,
+.user-greeting h1,
+#user-details h3 {
+  white-space: nowrap;
+}
+
+.user-greeting h1 {
+  margin-bottom: 0em;
+  margin: 2rem 5rem 0;
+}
+
+#user-details h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 0em;
+  margin: 0em 3.5em;
+}
+
+#user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.user-links {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 2rem;
+  justify-content: space-evenly;
+  width: 96vw;
+}
+
+#existing_grocery_list_container {
+  height: 15em;
+  overflow-y: auto;
+  margin-bottom: 3em;
+}
+
+#existing_grocery_list {
+  display: none;
+  list-style-type: none;
+  font-size: 1.5em;
+  font-weight: 400;
+  height: auto;
+  padding: 0em 1.5em;
+}
+
+#existing_grocery_list li {
+  padding: 0.5em 0em;
+}
+
+.green-box {
+  display: flex;
+  flex-direction: column;
+  margin: 0em;
+  padding: 0;
+  background-color: #7c9e57;
+  border-radius: 2em;
+}
+
+.interface-button {
+  flex-grow: 0.75;
+  height: auto;
+  background-color: #7c9e57;
+  border: none;
+  border-radius: 2em;
+}
+
+.user-links button:hover {
+  background-color: #719150;
+}
+
+.user-links button:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.user-links button:focus {
+  box-shadow: rgb(102, 132, 72) 0 0 3px;
+  outline: none;
+}
+
+.user-links button:disabled {
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.user-links button:active {
+  background-color: rgb(102, 132, 72);
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.bouncing-logo {
+  width: 7.5rem;
+  height: 7.5rem;
+  background-image: url(./assets/images/final-icon1.png);
+  position: absolute;
+  border-radius: 50%;
+}

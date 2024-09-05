@@ -8,6 +8,16 @@
     /*font-family: "Sulphur Point", sans-serif;*/
     font-family: monospace;
     font-style: normal;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
 }
 
 html,
@@ -54,20 +64,9 @@ header {
         padding-left: 100px;
     }
 
-    /* This handles the class of "back" buttons in the headers. Home button on project.html and back button on notes.html */
-    .back {
-        &>i {
-            font-size: 2em;
-            font-weight: 700;
-            letter-spacing: 5px;
-            margin: 3px;
-            margin-left: 8px;
-            color: white;
-        }
-
-        &:hover {
-            opacity: 60%;
-        }
+    #home-button-logo:hover{
+            cursor:pointer;
+            opacity: 80%;
     }
 }
 
@@ -75,4 +74,12 @@ header {
     body {
         padding-top: 120px;
     }
+}
+
+.header-links{
+    padding-left: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    column-gap: 50px;
+    font-size: 165%;
 }
