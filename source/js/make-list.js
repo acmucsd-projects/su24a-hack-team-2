@@ -55,7 +55,7 @@ function init(){
     document.getElementById('listHeading').addEventListener('keydown', (event) => {
         if(event.key === 'Enter'){
             document.getElementById('listHeading').contentEditable = false;
-            document.getElementById('listHeading').style.backgroundColor = '#f8f2e1';
+            document.getElementById('listHeading').style.backgroundColor = '#FFFFFF';
         }
     });
 

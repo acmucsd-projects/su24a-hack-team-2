@@ -1,30 +1,9 @@
-
-/*Formatting for the text area*/
-/*#grocery-header{
-    background: #FC9E5F;    
-    border-radius: 10px;
-
-    padding: 9px;
-
-    color:rgb(128, 57, 9);
-
-    margin: 10px;
-}
-
-/*Changing the color of the text inside the text area
-::placeholder{
-    color:rgb(128, 57, 9);
-    font-size: 110%;
-    font-weight: bold;
-}*/
-
 .title{
     display: flex;
     justify-content: space-between; /* Aligns text left and buttons right */
     align-items: center; /* Aligns text and buttons vertically at the same level */
-    padding: 10px; /* Optional: Adds padding around the title */
+    padding: 0 2em;
 }
-
 
 .list-name{
     margin:0;
@@ -34,23 +13,20 @@
 .next-page-buttons{
     background: #7C9E57;
     border-radius: 30px;
-    
     padding:10px;
     margin:10px;
-
-    font-size: 110%;
+    /* font-size: 5em; */
     font-weight: bold;
-
     display:flex;
     gap:10px;
-
 }
 
+/* Proposed change: Removing the opacity animation */
 /*Changing cursor visuals + opacity of 'add item' and 'finished with your list' buttons */
-.next-page-buttons:hover{
+/* .next-page-buttons:hover{
     cursor:pointer;
     opacity: 80%;
-}
+} */
 
 #editListBtn {
     background-color: transparent; /* Dark Blue */
@@ -68,7 +44,7 @@
     text-align: center;
     text-decoration: none;
     /* display: inline-block; */
-    font-size: 15px;
+    font-size: 1.5em;
     border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
@@ -76,39 +52,67 @@
 }
 
 .menuBTN:hover {
-    background-color: #4f6834; /* Darker Green */
-}
+    background-color: #719150;
+    opacity: 70%;
+  }
+  
+  .menuBTN:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .menuBTN:focus {
+    box-shadow: #668448 0 0 3px;
+    outline: none;
+  }
+  
+  .menuBTN:disabled {
+    border-color: #1b1f231a;
+    color: #ffffffcc;
+    cursor: default;
+  }
+  
+  .menuBTN:active {
+    background-color: #668448;
+    box-shadow: #14462033 0 1px 0 inset;
+  }
 
 /*formatting for the entirety of the 3-column display*/
 .information-holder{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-
-    background-color: rgb(225, 228, 207);
-
-    border-radius: 10px;
-
-    margin: 10px;
+    background-color: #EFF0E5;
+    border-radius: 2em;
+    border: none;
+    margin: 0em 2em;
 }
 
 /*Including border between each column to determine placement - can take out if wanted*/
 .column1, .column2, .column3{
-    border-style: solid;
-    border-color: rgb(213, 215, 200);
-    border-radius: 10px;
+    border: 0.4em solid #d5d7c8;
 }
 
 /*Adjusting font weight/size of the list of items within 1st column*/
 .column1{
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
     #item-list{
         font-weight: bold;
         font-size: 150%
     }    
+
+    .groceryItem {
+        width: auto;
+        padding: 0;
+        margin: 1.25em;
+        padding: 0.15em;
+    }
 }
 
 /*Overall formatting for 2nd column*/
 .column2{
-
+    border-left: none;
+    border-right: none;
     /*Aligning the Name and Main Image to be in the center of the column*/
     .align-images-center{
         display: grid;
@@ -126,7 +130,7 @@
     }
 
     h2{
-        margin: 10px;
+        margin: 10px 0 10px 10px;
         font-size: 175%;
     }
 
@@ -134,7 +138,8 @@
 
 /*Formatting for the 3rd Column*/
 .column3{
-
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
     /*Adjusting display of 'description' and 'nutrition facts' buttons*/
     .fact-buttons{
         display: flex;
@@ -157,7 +162,6 @@
         #description-button{
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
-
             background-color: rgb(173, 175, 161); /*keep this way so that when page loads, it looks like description button is automatically selected.*/
         }
 
@@ -185,18 +189,14 @@
 /*Formatting for the image slider in 2nd column*/
 .image-holder{
     display: flex;
-    
     overflow:scroll;
     width:auto;
     height:auto;
     border:1px solid rgb(241, 243, 227);
-    margin:10px;
+    margin:10px 0 10px 10px;
     background-color: rgb(241, 243, 227);
-
     border-radius: 10px;
-    
     scroll-snap-type: x mandatory;
-
     /*Makes sure all images inside slider have rounded border + equal space between each item*/
     img{
         border-radius: 10px;
@@ -258,4 +258,9 @@
 
     background: transparent;
     color: #69563b;
+}
+
+.extra-images {
+    padding: 0 0.5em;
+    border: 0.2em solid #00000033;
 }
