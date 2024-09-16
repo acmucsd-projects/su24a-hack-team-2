@@ -26,6 +26,8 @@ body {
     /* Prevents tiling of background gradients or images */
     max-width: 100vw;
     /* Gets rid of unnecessary scroll bar that appeared on some screens */
+    background-image: url(../assets/images/gradient-bg-img.png);
+    background-size: cover;
 }
 
 body {
