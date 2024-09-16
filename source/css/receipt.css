@@ -1,5 +1,5 @@
 .display {
-  background-color: #f3e9ce;
+  background-color: #EFF0E5;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -7,7 +7,7 @@
   overflow-y: auto;
   border-radius: 1em;
   padding: 1.5em 1.25em;
-  margin: 1em 2em;
+  margin: 0 2em;
   height: auto;
 }
 

@@ -31,10 +31,13 @@
 #editListBtn {
     background-color: transparent; /* Dark Blue */
     border: none;
-    font-size: large;
-    
+    font-size: 0.75em;
     font-weight: bold;
     cursor: pointer;
+}
+
+#listHeading {
+    font-size: 1.1em;
 }
 
 .menuBTN {
