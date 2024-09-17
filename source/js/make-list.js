@@ -10,8 +10,6 @@
 
 window.addEventListener("load", () => init());
 
-//export let grocery_lists = [];
-
 /**
  * Initializes the page
  */
@@ -38,13 +36,6 @@ function init(){
     document.querySelectorAll(".groceryItem").forEach(function(item){
         item.addEventListener("click", () => displayGroceryInformation(item, item_name));
     });
-
-    //document.write(grocery_lists[0].textContent);
-
-
-    /*const grocery_item = document.getElementById("groceryItem");
-    
-    grocery_item.addEventListener("click", () => displayGroceryInformation(grocery_item, item_name));*/
 
     document.getElementById('editListBtn').addEventListener('click', function() {
         document.getElementById('listHeading').contentEditable = true;
