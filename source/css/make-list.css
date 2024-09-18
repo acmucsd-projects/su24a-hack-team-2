@@ -55,8 +55,7 @@
 }
 
 .menuBTN:hover {
-    background-color: #719150;
-    opacity: 70%;
+    background-color: rgba(113, 145, 80, 0.75);
   }
   
   .menuBTN:focus:not(:focus-visible):not(.focus-visible) {
