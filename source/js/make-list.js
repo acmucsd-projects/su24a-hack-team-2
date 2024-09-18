@@ -10,8 +10,6 @@
 
 window.addEventListener("load", () => init());
 
-//export let grocery_lists = [];
-
 /**
  * Initializes the page
  */
@@ -39,13 +37,6 @@ function init(){
         item.addEventListener("click", () => displayGroceryInformation(item, item_name));
     });
 
-    //document.write(grocery_lists[0].textContent);
-
-
-    /*const grocery_item = document.getElementById("groceryItem");
-    
-    grocery_item.addEventListener("click", () => displayGroceryInformation(grocery_item, item_name));*/
-
     document.getElementById('editListBtn').addEventListener('click', function() {
         document.getElementById('listHeading').contentEditable = true;
         document.getElementById('listHeading').style.backgroundColor = '#e8e3d2';
@@ -55,7 +46,7 @@ function init(){
     document.getElementById('listHeading').addEventListener('keydown', (event) => {
         if(event.key === 'Enter'){
             document.getElementById('listHeading').contentEditable = false;
-            document.getElementById('listHeading').style.backgroundColor = '#f8f2e1';
+            document.getElementById('listHeading').style.backgroundColor = '#FFFFFF';
         }
     });
 

@@ -1,72 +1,101 @@
-.sign-up{
-    background-color: rgba(254, 153, 32, 0.80);
-    padding: 7.5px;
-    padding-bottom: 50px;
-
-    font-size: 200%;
-
-    padding-left: 30px;
-
+.sign-up {
+  background-color: #fe9920cc;
+  padding: 1em;
+  font-size: 200%;
+  padding-left: 1em;
 }
 
-.header-links{
-    padding-left: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
-    column-gap: 50px;
-
-    font-size: 165%
+.header-container p {
+  margin: 0 0 2em 0;
 }
 
-.info-splurge{
-    font-size: 200%;
+.header-container h1 {
+  margin: 0.5em 0 0 0;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
+.interface-button {
+  flex-grow: 0.75;
+  height: auto;
+  border: none;
+  border-radius: 1.5em;
+  white-space: nowrap;
+  background: #fe9920;
+  flex-grow: 0.75;
+  height: auto;
+  text-align: center;
+  border: none;
+  color: #000000;
+  font-size: 70%;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  padding: 1em 7.5em;
 }
 
-.info-splurge{
-    padding-left: 25px;
+.interface-button:hover {
+  background-color: #fe910b;
 }
 
-#sign-up-button{
-    background: #FE9920;
-    padding-top:5px;
-    padding-bottom:5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    width:300px;
-    height:50px;
-
-    font-size: 70%;
-
-    border-radius: 10px;
-
+.interface-button:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
 }
 
-#wholefoods-icon{
-    border-radius: 50px;
+.interface-button:focus {
+  box-shadow: #f48701 0 0 3px;
+  outline: none;
 }
 
-#walmart-icon{
-    border-radius: 50px;
+.interface-button:disabled {
+  border-color: #1b1f231a;
+  color: #ffffffcc;
+  cursor: default;
 }
 
-#costco-icon{
-    border-radius: 50px;
+.interface-button:active {
+  background-color: #df7b01;
+  box-shadow: #14462033 0 1px 0 inset;
 }
 
-.column{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.info-splurge {
+  padding: 0 2em;
+}
+.info-splurge h2 {
+  font-size: 2.5em;
+  padding: 0;
+  margin-bottom: 0.5em;
 }
 
-.brand-images{
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+.info-splurge p {
+  font-size: 1.5em;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.header-links {
+  padding-left: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 50px;
+  font-size: 165%;
+}
+
+.grid {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+.brand-images {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: auto;
+  width: auto;
+}
+
+.image {
+  height: 6em;
+  width: 6em;
+  border-radius: 5em;
 }

@@ -1,4 +1,4 @@
-#user-page {
+body {
   background-image: url(../assets/images/gradient-bg-img.png);
   background-size: cover;
 }
@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   align-content: space-between;
-  background-color: #fe9920;
+  background-color: #fe9920cc;
   width: 100vw;
   padding-bottom: 8em;
 }
@@ -23,11 +23,11 @@
   color: #000000;
   font-size: 1.5em;
   font-weight: 600;
-  margin: 0em 1em;
+  margin: 0;
   text-decoration: none;
   text-align: center;
   height: 15rem;
-  padding: 3em 0;
+  padding: 1em;
 }
 
 .user-greeting {
@@ -92,43 +92,45 @@
 .green-box {
   display: flex;
   flex-direction: column;
-  margin: 0em;
-  padding: 0;
+  margin: 0 1em;
+  padding: 0em;
   background-color: #7c9e57;
   border-radius: 2em;
+  width: auto;
 }
 
 .interface-button {
   flex-grow: 0.75;
   height: auto;
   background-color: #7c9e57;
+  text-align: center;
   border: none;
   border-radius: 2em;
 }
 
-.user-links button:hover {
+.interface-button:hover {
   background-color: #719150;
 }
 
-.user-links button:focus:not(:focus-visible):not(.focus-visible) {
+.interface-button:focus:not(:focus-visible):not(.focus-visible) {
   box-shadow: none;
   outline: none;
 }
 
-.user-links button:focus {
-  box-shadow: rgb(102, 132, 72) 0 0 3px;
+.interface-button:focus {
+  box-shadow: #668448 0 0 3px;
   outline: none;
 }
 
-.user-links button:disabled {
-  border-color: rgba(27, 31, 35, 0.1);
-  color: rgba(255, 255, 255, 0.8);
+.interface-button:disabled {
+  border-color: #1b1f231a;
+  color: #ffffffcc;
   cursor: default;
 }
 
-.user-links button:active {
-  background-color: rgb(102, 132, 72);
-  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+.interface-button:active {
+  background-color: #668448;
+  box-shadow: #14462033 0 1px 0 inset;
 }
 
 .fade-out {
