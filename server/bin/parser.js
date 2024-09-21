@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post('/submit', (req, res) => {
+    console.log('post');
     const newUser = new User({
         name: req.body.name,
         email: req.body.email,
@@ -19,8 +20,10 @@ app.post('/submit', (req, res) => {
     newUser.save((err) => {
         if (err) {
             res.send('Error saving user data.');
+            console.log('err');
         } else {
             res.send('User data saved successfully!');
+            console.log('else');
         }
     });
 });

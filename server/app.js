@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+const bodyParser = require('body-parser');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,3 +42,26 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+app.post('/submit', (req, res) => {
+  console.log('post');
+  const newUser = new User({
+      name: req.body.name,
+      email: req.body.email,
+  });
+
+  newUser.save((err) => {
+      if (err) {
+          res.send('Error saving user data.');
+          console.log('err');
+      } else {
+          res.send('User data saved successfully!');
+          console.log('else');
+      }
+  });
+});
